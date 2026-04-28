@@ -10,5 +10,5 @@ export default defineConfig({
     cssCodeSplit: false,
     sourcemap: true,
   },
-base:"/aamir",
+  base: '/fluffy-happiness/',
 });
