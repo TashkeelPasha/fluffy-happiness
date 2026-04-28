@@ -1,0 +1,97 @@
+.section--expertise {
+  padding-block: 9rem 11rem;
+  overflow: hidden;
+}
+
+.expertise__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(244, 241, 234, 0.18);
+}
+
+.expertise__title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: var(--fs-display-l);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+  color: var(--paper);
+}
+
+.expertise__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-self: end;
+}
+
+.expertise__top-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.expertise__top-list li {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(244, 241, 234, 0.32);
+  border-radius: 999px;
+  color: rgba(244, 241, 234, 0.9);
+}
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee__track {
+  display: inline-flex;
+  gap: 4rem;
+  padding-block: 1.5rem;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee__item {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2.75rem, 7vw, 6.25rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.marquee__item::after {
+  content: '*';
+  display: inline-block;
+  color: var(--accent);
+  font-style: normal;
+  transform: translateY(-0.25em);
+  font-size: 0.5em;
+}
+
+.marquee + .marquee {
+  margin-top: -0.75rem;
+}
+
+.marquee--reverse .marquee__track {
+  animation-direction: reverse;
+}
+
+@media (max-width: 900px) {
+  .expertise__head { grid-template-columns: 1fr; gap: 2rem; }
+}

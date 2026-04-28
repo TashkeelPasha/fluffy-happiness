@@ -1,0 +1,91 @@
+.section--recognition {
+  padding-block: 12rem;
+  background: var(--paper);
+}
+
+.recognition {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.recognition__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-on);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.recognition__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.recognition__title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2.5rem, 6.5vw, 6.5rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+.recognition__title em {
+  font-style: italic;
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.18em;
+  background-position: 0 88%;
+  padding-inline: 0.05em;
+}
+
+.recognition__body {
+  max-width: 60ch;
+  font-size: var(--fs-body-l);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.recognition__org {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  width: 100%;
+  max-width: 30rem;
+}
+
+.recognition__org-name {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.recognition__org-year {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 768px) {
+  .section--recognition { padding-block: 7rem; }
+}

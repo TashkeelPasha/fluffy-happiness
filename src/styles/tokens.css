@@ -1,0 +1,56 @@
+:root {
+  /* color */
+  --ink: #0A0A0A;
+  --ink-soft: #1F1E1B;
+  --ink-muted: #6B6862;
+  --paper: #F4F1EA;
+  --paper-deep: #ECE7DD;
+  --rule: rgba(10, 10, 10, 0.12);
+  --rule-strong: rgba(10, 10, 10, 0.32);
+  --accent: #C8A876;
+  --accent-on: #0A0A0A;
+
+  /* type scale - fluid */
+  --fs-display-xl: clamp(4rem, 14vw, 17rem);
+  --fs-display-l: clamp(3rem, 8.5vw, 9rem);
+  --fs-display-m: clamp(2.25rem, 5vw, 5rem);
+  --fs-h1: clamp(2.5rem, 6vw, 6rem);
+  --fs-h2: clamp(2rem, 4vw, 4rem);
+  --fs-h3: clamp(1.5rem, 2.5vw, 2.25rem);
+  --fs-body-l: clamp(1.125rem, 1.4vw, 1.5rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-mono: 0.75rem;
+
+  /* spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-11: 12rem;
+
+  /* layout */
+  --gutter: 1.5rem;
+  --container-w: 1480px;
+  --container-narrow-w: 1080px;
+  --container-tight-w: 780px;
+
+  /* motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-9: 4rem;
+    --space-10: 5rem;
+    --space-11: 7rem;
+  }
+}

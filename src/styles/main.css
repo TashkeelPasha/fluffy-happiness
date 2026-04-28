@@ -1,0 +1,36 @@
+@import './reset.css';
+@import './tokens.css';
+@import './typography.css';
+@import './layout.css';
+
+@import './sections/preloader.css';
+@import './sections/nav.css';
+@import './sections/hero.css';
+@import './sections/manifesto.css';
+@import './sections/pillars.css';
+@import './sections/recognition.css';
+@import './sections/expertise.css';
+@import './sections/experience.css';
+@import './sections/voice.css';
+@import './sections/services.css';
+@import './sections/education.css';
+@import './sections/contact.css';
+@import './sections/footer.css';
+@import './sections/cursor.css';
+
+html { scroll-behavior: smooth; }
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

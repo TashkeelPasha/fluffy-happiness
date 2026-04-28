@@ -1,0 +1,27 @@
+import Lenis from 'lenis';
+import { gsap, ScrollTrigger, motionOK } from './gsap-setup.js';
+
+export function initLenis() {
+  if (!motionOK) {
+    return null;
+  }
+
+  const lenis = new Lenis({
+    duration: 1.15,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 1.4,
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
+  document.documentElement.classList.add('lenis');
+
+  return lenis;
+}

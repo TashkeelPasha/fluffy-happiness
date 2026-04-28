@@ -1,0 +1,118 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem 0;
+  transition: transform 0.5s var(--ease-out-expo), background-color 0.4s ease, color 0.4s ease, backdrop-filter 0.4s ease;
+  background: transparent;
+  color: var(--ink);
+}
+
+.nav.is-hidden { transform: translateY(-110%); }
+
+.nav.is-scrolled {
+  background: rgba(244, 241, 234, 0.78);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav.is-on-dark { color: var(--paper); }
+.nav.is-on-dark.is-scrolled {
+  background: rgba(10, 10, 10, 0.6);
+  border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .nav__brand-full { display: none; }
+  .nav__brand-short { display: inline; }
+}
+@media (min-width: 481px) {
+  .nav__brand-short { display: none; }
+}
+
+.nav__brand-mark {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 0.4rem;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2.25rem;
+}
+
+.nav__link {
+  position: relative;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+
+.nav__link:hover::after,
+.nav__link.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__cta {
+  border: 1px solid currentColor;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.nav__cta:hover {
+  background: currentColor;
+}
+.nav__cta:hover span { color: var(--paper); }
+.nav.is-on-dark .nav__cta:hover span { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+}

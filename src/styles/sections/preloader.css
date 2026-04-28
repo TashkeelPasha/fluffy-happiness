@@ -1,0 +1,41 @@
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.preloader__inner {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding-inline: 2rem;
+}
+
+.preloader__label {
+  color: rgba(244, 241, 234, 0.5);
+}
+
+.preloader__counter {
+  font-size: clamp(6rem, 22vw, 18rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--paper);
+  font-feature-settings: 'tnum';
+}
+
+.preloader__veil {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform-origin: top;
+}
+
+body.is-ready #preloader {
+  pointer-events: none;
+}
