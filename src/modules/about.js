@@ -21,6 +21,12 @@ export function mountAbout() {
           <span class="about__impact-label">${about.impactLabel}</span>
           <p class="about__impact-body">${about.impact}</p>
         </div>
+        <div class="about__boards">
+          <span class="about__boards-label label">${about.boardsLabel}</span>
+          <ul class="about__boards-list">
+            ${about.boards.map((b) => `<li class="about__boards-item">${b}</li>`).join('')}
+          </ul>
+        </div>
       </div>
     </div>
   `;

@@ -25,9 +25,10 @@ export const hero = {
   eyebrow: 'Corporate Governance · Data Centre Strategy',
   name: 'Aamir Ahsan Khan',
   roles: [
-    'Corporate Governance Specialist',
-    'Data Centre Strategist',
     'Marine Engineer',
+    'Corporate Governance Specialist',
+    'Academic Advisor',
+    'Data Centre Strategist',
     'Non-Executive Director',
   ],
   opening:
@@ -49,15 +50,23 @@ export const manifesto = {
 export const about = {
   eyebrow: '02 / About',
   stat: '40+',
-  statLabel: 'Years across engineering, governance, and leadership',
-  title: 'Engineering, governance, and strategic leadership at scale.',
+  statLabel: 'Years across engineering, governance, education, and leadership',
+  title: 'Marine Engineer, Corporate Governance Specialist, and Academic Advisor.',
   paragraphs: [
-    'Aamir Ahsan Khan is a distinguished Corporate Governance Specialist and Marine Engineer with over 40 years of multifaceted experience in international infrastructure, energy, and financial audits across the UK, Middle East, and Asia.',
-    'Evolving from a Marine Chief Engineer to senior board and advisory roles, Aamir blends deep technical proficiency with expertise in Data Centre Strategy, risk management, forensic auditing, and Building Management Systems (BMS).',
+    'Aamir Ahsan Khan is a distinguished Marine Engineer, Corporate Governance Specialist, and Academic Advisor with over 40 years of multifaceted experience in engineering, energy, infrastructure, education, and financial audit across Pakistan and internationally. Evolving from a Marine Chief Engineer to senior board and advisory roles, he blends deep technical proficiency with expertise in governance, risk management, forensic auditing, and Building Management Systems (BMS).',
+    'Throughout his career, Aamir has led modernisation and restructuring initiatives in petrochemical, power, and cement sectors — integrating advanced technologies, optimising energy systems, and establishing governance frameworks that drive operational transparency and financial sustainability. His leadership has consistently delivered multi-million-rupee recoveries and efficiency improvements while strengthening institutional accountability.',
+    'As an Academic Advisor with Academic Window LLC (USA), he provides strategic guidance to educational institutions — focusing on preventive counselling, policy development, and youth empowerment programmes. He is deeply engaged in international networks, collaborating on diversified, sustainable projects that promote clean energy, educational reform, and corporate ethics.',
   ],
   impactLabel: 'Key impact',
   impact:
-    'He has led major modernisation and restructuring initiatives in global power, infrastructure, and tech sectors — integrating advanced technologies, optimising energy systems for high-density data centres, and establishing governance frameworks that drive operational transparency and scalable growth.',
+    'A trusted advisor in complex, multidisciplinary environments — bridging engineering expertise with strategic leadership and cross-cultural collaboration to deliver measurable recoveries, scalable governance, and durable institutional reform.',
+  boardsLabel: 'Boards & affiliations',
+  boards: [
+    'Redux Forensic Accountants — UK',
+    'First Dawood Properties Limited',
+    'Enormity Group — Bahrain',
+    'Academic Window LLC — USA',
+  ],
 };
 
 export const pillars = {
@@ -96,10 +105,14 @@ export const pillars = {
 export const recognition = {
   eyebrow: '— Recognition',
   badge: 'Ambassador',
-  title: 'Human Rights Ambassador for International Human Rights.',
-  body: 'Selected by the International Human Rights Commission in 2011 for the introduction of forensic audits and governance assistance to global entities including the World Bank, IMF, and the Islamic Development Bank.',
+  title: 'Human Rights Ambassador for the International Human Rights Commission.',
+  body: 'Appointed Ambassador for Pakistan in 2011 for the introduction of forensic audits and governance assistance to global entities including the World Bank, IMF, and the Islamic Development Bank.',
   org: 'International Human Rights Commission',
   year: '2011',
+  secondary: {
+    label: 'Earlier honour',
+    text: 'Listed in Who’s Who, 1999.',
+  },
 };
 
 export const expertise = {
@@ -203,6 +216,7 @@ export const services = {
     'Non-profit Governance',
     'Project Management',
     'Healthcare Infrastructure',
+    'Forensic Audits',
   ],
   specialised: {
     label: 'Specialised practice',
@@ -275,6 +289,12 @@ export const education = {
       school: 'The Institution of Engineers Pakistan',
       detail: 'Fire & Disaster Control · 2001',
     },
+  ],
+  membershipsLabel: 'Professional memberships',
+  memberships: [
+    'Institute of Marine Engineers (UK)',
+    'NFPA',
+    'International Gas Turbine Institute',
   ],
 };
 

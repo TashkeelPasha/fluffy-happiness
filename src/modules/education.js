@@ -22,6 +22,16 @@ export function mountEducation() {
           )
           .join('')}
       </div>
+      ${
+        education.memberships?.length
+          ? `<div class="education__memberships">
+              <span class="education__memberships-label label">${education.membershipsLabel}</span>
+              <ul class="education__memberships-list">
+                ${education.memberships.map((m) => `<li>${m}</li>`).join('')}
+              </ul>
+            </div>`
+          : ''
+      }
     </div>
   `;
   el.id = 'education';

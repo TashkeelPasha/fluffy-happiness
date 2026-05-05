@@ -10,13 +10,21 @@ export function mountRecognition() {
       <span class="eyebrow">${recognition.eyebrow}</span>
       <span class="recognition__badge">${recognition.badge}</span>
       <h2 id="recognition-title" class="recognition__title">
-        ${recognition.title.replace('Corruption', '<em>Corruption</em>')}
+        ${recognition.title.replace('Commission', '<em>Commission</em>')}
       </h2>
       <p class="recognition__body">${recognition.body}</p>
       <div class="recognition__org">
         <span class="recognition__org-name">${recognition.org}</span>
         <span class="recognition__org-year">${recognition.year}</span>
       </div>
+      ${
+        recognition.secondary
+          ? `<div class="recognition__secondary">
+              <span class="recognition__secondary-label">${recognition.secondary.label}</span>
+              <span class="recognition__secondary-text">${recognition.secondary.text}</span>
+            </div>`
+          : ''
+      }
     </div>
   `;
 
