@@ -20,6 +20,24 @@
   max-width: 16ch;
 }
 
+.services__intro {
+  max-width: 42ch;
+  color: rgba(244, 241, 234, 0.7);
+  line-height: 1.55;
+  font-size: var(--fs-body-l);
+}
+
+.services__tier { margin-bottom: 6rem; }
+
+.services__tier-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.25rem;
+}
+
+.services__tier-head .label { color: rgba(244, 241, 234, 0.55); }
+
 .services__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -34,7 +52,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  min-height: 14rem;
+  min-height: 13rem;
   transition: background 0.5s var(--ease-out-quart), color 0.5s var(--ease-out-quart);
   cursor: default;
 }
@@ -63,10 +81,120 @@
   margin-top: auto;
 }
 
+/* Featured / specialised practice */
+.services__featured {
+  border: 1px solid rgba(244, 241, 234, 0.22);
+  background: linear-gradient(180deg, rgba(244, 241, 234, 0.04) 0%, rgba(244, 241, 234, 0) 60%);
+  padding: clamp(2rem, 4vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.services__featured-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.services__featured-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  align-self: flex-start;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-on);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.services__featured-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.services__featured-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  color: var(--paper);
+  max-width: 18ch;
+}
+
+.services__featured-intro {
+  color: rgba(244, 241, 234, 0.7);
+  line-height: 1.55;
+  max-width: 44ch;
+}
+
+.services__featured-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(244, 241, 234, 0.18);
+}
+
+.services__featured-item {
+  display: grid;
+  grid-template-columns: 4rem 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid rgba(244, 241, 234, 0.18);
+  transition: padding-left 0.4s var(--ease-out-quart), background 0.4s var(--ease-out-quart);
+  cursor: default;
+}
+
+.services__featured-item:hover {
+  padding-left: 1rem;
+  background: rgba(244, 241, 234, 0.04);
+}
+
+.services__featured-n {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: rgba(244, 241, 234, 0.5);
+}
+
+.services__featured-name {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
+  line-height: 1.2;
+  color: var(--paper);
+}
+
+.services__featured-arrow {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 1.5rem;
+  opacity: 0.7;
+  transition: transform 0.4s var(--ease-out-expo), opacity 0.4s ease;
+}
+
+.services__featured-item:hover .services__featured-arrow {
+  opacity: 1;
+  transform: translate(4px, -4px);
+}
+
 @media (max-width: 1100px) {
   .services__list { grid-template-columns: repeat(2, 1fr); }
+  .services__featured { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 560px) {
   .services__list { grid-template-columns: 1fr; }
   .services__head { grid-template-columns: 1fr; gap: 2rem; }
+  .services__featured-item { grid-template-columns: 3rem 1fr auto; gap: 1rem; }
 }

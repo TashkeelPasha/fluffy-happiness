@@ -8,6 +8,7 @@ import { mountPreloader } from './modules/preloader.js';
 import { mountNav } from './modules/nav.js';
 import { mountHero } from './modules/hero.js';
 import { mountManifesto } from './modules/manifesto.js';
+import { mountAbout } from './modules/about.js';
 import { mountPillars } from './modules/pillars.js';
 import { mountRecognition } from './modules/recognition.js';
 import { mountExpertise } from './modules/expertise.js';
@@ -23,6 +24,7 @@ function boot() {
   mountNav();
   mountHero();
   mountManifesto();
+  mountAbout();
   mountPillars();
   mountRecognition();
   mountExpertise();
