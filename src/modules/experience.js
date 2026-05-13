@@ -15,18 +15,23 @@ export function mountExperience() {
       </header>
       <div class="experience__wrap">
         <aside class="experience__sticky">
-          <span class="experience__sticky-label label">Currently active</span>
+          <span class="experience__sticky-label label">Currently viewing</span>
           <span class="experience__counter">
             <span class="experience__counter-n">01</span>
             <span class="experience__counter-total">/ ${total}</span>
           </span>
+          <span class="experience__sticky-hint label">Scroll for full career</span>
         </aside>
         <ol class="experience__list">
           ${experience.items
             .map(
-              (e) => `
+              (e, i) => `
             <li class="exp">
-              <span class="exp__period">${e.period}</span>
+              <div class="exp__side">
+                <span class="exp__n">${(i + 1).toString().padStart(2, '0')}</span>
+                <span class="exp__period">${e.period}</span>
+                ${e.duration ? `<span class="exp__duration">${e.duration}</span>` : ''}
+              </div>
               <div class="exp__main">
                 <h3 class="exp__role">${e.role}</h3>
                 <div class="exp__company">
@@ -35,6 +40,14 @@ export function mountExperience() {
                   <span>${e.type}</span>
                 </div>
                 <p class="exp__blurb">${e.blurb}</p>
+                ${
+                  e.skills?.length
+                    ? `<ul class="exp__skills">
+                        ${e.skills.map((s) => `<li class="exp__skill">${s}</li>`).join('')}
+                        ${e.moreSkills > 0 ? `<li class="exp__skill exp__skill--more">+${e.moreSkills} more</li>` : ''}
+                      </ul>`
+                    : ''
+                }
               </div>
             </li>`
             )
@@ -54,7 +67,7 @@ export function mountExperience() {
       opacity: 0,
       y: 40,
       duration: 0.9,
-      stagger: 0.08,
+      stagger: 0.06,
       ease: 'expo.out',
       scrollTrigger: { trigger: item, start: 'top 85%' },
     });
