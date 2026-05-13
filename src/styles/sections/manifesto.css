@@ -223,21 +223,23 @@
 
 .carousel__dots {
   display: flex;
-  gap: 0.4rem;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1;
 }
 
 .carousel__dot {
-  width: 24px;
+  width: 16px;
   height: 3px;
   border-radius: 2px;
-  background: rgba(244, 241, 234, 0.2);
+  background: rgba(244, 241, 234, 0.22);
   padding: 0;
   border: 0;
   cursor: pointer;
   transition: background 0.4s ease, width 0.4s ease;
 }
-.carousel__dot:hover { background: rgba(244, 241, 234, 0.45); }
-.carousel__dot.is-active { background: var(--accent); width: 36px; }
+.carousel__dot:hover { background: rgba(244, 241, 234, 0.5); }
+.carousel__dot.is-active { background: var(--accent); width: 28px; }
 
 .carousel__nav { display: flex; gap: 0.5rem; }
 

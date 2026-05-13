@@ -63,15 +63,20 @@ export const manifesto = {
     'Financial Governance',
     'Mentorship',
   ],
-  // Drop photos at public/images/manifesto/01.jpg ... 06.jpg (or whatever path you choose).
+  // Photos live at public/images/. Order matches file-naming convention.
   // `src` is resolved relative to Vite's BASE_URL so it works locally and on GitHub Pages.
   carousel: [
-    { src: 'images/manifesto/01.jpg', alt: 'Aamir Ahsan Khan', caption: 'Pakistan · 2025' },
-    { src: 'images/manifesto/02.jpg', alt: 'Boardroom engagement', caption: 'London' },
-    { src: 'images/manifesto/03.jpg', alt: 'Industrial site visit', caption: 'Karachi' },
-    { src: 'images/manifesto/04.jpg', alt: 'International delegation', caption: 'Global Chamber' },
-    { src: 'images/manifesto/05.jpg', alt: 'Plant inspection', caption: 'Energy sector' },
-    { src: 'images/manifesto/06.jpg', alt: 'Conference panel', caption: '2024' },
+    { src: 'images/1.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/img1.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/2.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/3.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/4.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/5.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/6.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/7.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/8.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/9.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/10.jpeg', alt: 'Aamir Ahsan Khan' },
   ],
 };
 

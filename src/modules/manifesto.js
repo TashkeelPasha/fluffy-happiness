@@ -140,7 +140,7 @@ export function mountManifesto() {
   const start = () => {
     stop();
     if (!motionOK) return;
-    auto = setInterval(() => goto(active + 1), 5500);
+    auto = setInterval(() => goto(active + 1), 3000);
   };
   const stop = () => {
     if (auto) {
