@@ -45,6 +45,67 @@ export const manifesto = {
   body: 'Global Infrastructure & Sustainable Business Scaling.',
   closing:
     'Driving synergies across borders to achieve resilient digital infrastructure, fostering global networking, and building collaborative, future-ready international markets.',
+  rolesLabel: 'Where the work lives',
+  roles: [
+    'Philanthropist',
+    'Non-Executive Director',
+    'Sustainability Consultant',
+    'Data Centre Strategy',
+    'Building Management Systems',
+    'Strategic Restructuring',
+    'Risk Management Committee',
+    'Forensic Audits',
+    'Energy',
+    'Warehousing',
+    'Fuel Storage',
+    'Financial Governance',
+    'Mentorship',
+  ],
+  carouselLabel: 'Practice domains',
+  carousel: [
+    {
+      n: '01',
+      tag: 'Digital Infrastructure',
+      title: 'Data Centres for the AI Era.',
+      body: 'Architecting high-tier, energy-efficient compute capacity for the workloads that define the next decade.',
+      tags: ['Data Centre Strategy', 'BMS', 'ESG'],
+    },
+    {
+      n: '02',
+      tag: 'Energy',
+      title: 'Power Generation & Industrial Energy.',
+      body: 'Wärtsilä 18V46 maintenance leadership, PPA compliance, and fuel-and-lube discipline at plant scale.',
+      tags: ['Wärtsilä', 'OEM Contracts', 'PPA'],
+    },
+    {
+      n: '03',
+      tag: 'Forensic Audit',
+      title: 'Forensic Audit & Financial Governance.',
+      body: 'PKR 3 billion in DFI defaulted-loan recoveries — HBL, NDFC, NBP, FIA, NAB, and the Ehtasab Cell.',
+      tags: ['Forensic Audit', 'DFI', 'NAB'],
+    },
+    {
+      n: '04',
+      tag: 'Marine',
+      title: 'Marine Engineering & Shipping.',
+      body: 'Chief Engineer across Iranian, Norwegian, Japanese and UK flags — ten years of sea-time on propulsion plants up to 24,800 BHP.',
+      tags: ['Marine Engineering', 'Dry Docking', 'Propulsion'],
+    },
+    {
+      n: '05',
+      tag: 'Education',
+      title: 'Education & Capacity Building.',
+      body: 'Strategic guidance through Academic Window LLC — policy, youth empowerment, alignment with international standards.',
+      tags: ['Advisory', 'Policy', 'Mentorship'],
+    },
+    {
+      n: '06',
+      tag: 'Cross-Border',
+      title: 'Cross-Border Investment & Synergies.',
+      body: 'Bridging Pakistan and global markets through the Global Chamber and Indus Venture — capital, partnerships, and reform.',
+      tags: ['Boards', 'Partnerships', 'Capital'],
+    },
+  ],
 };
 
 export const about = {
