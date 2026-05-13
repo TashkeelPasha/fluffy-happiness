@@ -73,10 +73,23 @@
   </head>
   <body>
     <!-- Preloader -->
-    <div id="preloader" aria-hidden="true">
+    <div id="preloader" aria-hidden="true" role="status" aria-live="polite">
       <div class="preloader__inner">
-        <span class="preloader__label mono">Loading</span>
-        <span class="preloader__counter serif-italic">0</span>
+        <div class="preloader__top">
+          <span class="preloader__brand serif-italic">Aamir Ahsan Khan</span>
+          <span class="preloader__label mono">— Loading</span>
+        </div>
+
+        <div class="preloader__count">
+          <span class="preloader__counter serif-italic">00</span>
+          <span class="preloader__suffix mono">%</span>
+        </div>
+
+        <div class="preloader__bar" aria-hidden="true">
+          <span class="preloader__bar-fill"></span>
+        </div>
+
+        <span class="preloader__status mono">Preparing the manifesto</span>
       </div>
       <div class="preloader__veil"></div>
     </div>
