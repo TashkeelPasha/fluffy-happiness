@@ -5,6 +5,9 @@ export function mountManifesto() {
   const el = document.getElementById('manifesto');
   if (!el) return;
 
+  const BASE = import.meta.env.BASE_URL;
+  const total = manifesto.carousel.length;
+
   const words = manifesto.body
     .split(' ')
     .map(
@@ -16,73 +19,66 @@ export function mountManifesto() {
     )
     .join(' ');
 
-  const total = manifesto.carousel.length;
-
   el.innerHTML = `
     <div class="container manifesto">
       <header class="manifesto__head">
         <span class="eyebrow manifesto__eyebrow">${manifesto.eyebrow}</span>
-        <span class="manifesto__count label">${'01'.padStart(2, '0')} / ${String(total).padStart(2, '0')}</span>
+        <span class="manifesto__count label">01 / ${String(total).padStart(2, '0')}</span>
       </header>
 
       <div class="manifesto__grid">
         <div class="manifesto__left">
           <h2 id="manifesto-title" class="manifesto__body">${words}</h2>
-          <p class="manifesto__closing">${manifesto.closing}</p>
-
-          <div class="manifesto__roles">
-            <span class="manifesto__roles-label label">${manifesto.rolesLabel}</span>
-            <ul class="manifesto__roles-list">
-              ${manifesto.roles.map((r) => `<li class="manifesto__role">${r}</li>`).join('')}
-            </ul>
-          </div>
+          <ul class="manifesto__subtitles">
+            ${manifesto.subtitles.map((s) => `<li>${s}</li>`).join('')}
+          </ul>
+          <p class="manifesto__roles">
+            ${manifesto.roles.map((r) => `<span>${r}</span>`).join('<span class="manifesto__roles-sep" aria-hidden="true">·</span>')}
+          </p>
         </div>
 
         <aside class="manifesto__right">
-          <div class="manifesto__carousel" data-cursor>
-            <div class="carousel">
-              <div class="carousel__stage">
+          <div class="carousel carousel--photos" data-cursor>
+            <div class="carousel__stage">
+              ${manifesto.carousel
+                .map(
+                  (p, i) => `
+                <figure class="carousel__slide${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-hidden="${i === 0 ? 'false' : 'true'}">
+                  <img
+                    src="${BASE.replace(/\/+$/, '')}/${p.src}"
+                    alt="${p.alt || ''}"
+                    loading="${i === 0 ? 'eager' : 'lazy'}"
+                    decoding="async"
+                    onerror="this.classList.add('is-broken')"
+                  />
+                  ${p.caption ? `<figcaption class="carousel__caption">${p.caption}</figcaption>` : ''}
+                </figure>`
+                )
+                .join('')}
+            </div>
+            <footer class="carousel__foot">
+              <ul class="carousel__dots" role="tablist" aria-label="Photos">
                 ${manifesto.carousel
                   .map(
-                    (c, i) => `
-                  <article class="carousel__slide${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-hidden="${i === 0 ? 'false' : 'true'}">
-                    <header class="carousel__slide-head">
-                      <span class="carousel__n">${c.n}</span>
-                      <span class="carousel__tag">${c.tag}</span>
-                    </header>
-                    <h3 class="carousel__title">${c.title}</h3>
-                    <p class="carousel__body">${c.body}</p>
-                    <ul class="carousel__tags">
-                      ${c.tags.map((t) => `<li>${t}</li>`).join('')}
-                    </ul>
-                  </article>`
+                    (_, i) => `
+                  <li><button class="carousel__dot${i === 0 ? ' is-active' : ''}" type="button" role="tab" aria-selected="${i === 0}" data-index="${i}">
+                    <span class="sr-only">Photo ${i + 1}</span>
+                  </button></li>`
                   )
                   .join('')}
+              </ul>
+              <div class="carousel__nav">
+                <button class="carousel__btn" data-dir="-1" aria-label="Previous photo">&larr;</button>
+                <button class="carousel__btn" data-dir="1" aria-label="Next photo">&rarr;</button>
               </div>
-              <footer class="carousel__foot">
-                <ul class="carousel__dots" role="tablist" aria-label="Practice domains">
-                  ${manifesto.carousel
-                    .map(
-                      (_, i) => `
-                    <li><button class="carousel__dot${i === 0 ? ' is-active' : ''}" type="button" role="tab" aria-selected="${i === 0}" data-index="${i}">
-                      <span class="sr-only">Domain ${i + 1}</span>
-                    </button></li>`
-                    )
-                    .join('')}
-                </ul>
-                <div class="carousel__nav">
-                  <button class="carousel__btn" data-dir="-1" aria-label="Previous domain">&larr;</button>
-                  <button class="carousel__btn" data-dir="1" aria-label="Next domain">&rarr;</button>
-                </div>
-              </footer>
-            </div>
+            </footer>
           </div>
         </aside>
       </div>
     </div>
   `;
 
-  // --- char reveal on scroll (existing behaviour) ---
+  // --- char reveal on scroll ---
   if (!motionOK) {
     el.querySelectorAll('.manifesto__body .char').forEach((c) => c.classList.add('is-lit'));
   } else {
@@ -99,31 +95,20 @@ export function mountManifesto() {
     });
 
     gsap.from(el.querySelector('.manifesto__eyebrow'), {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
+      opacity: 0, y: 20, duration: 0.8,
       scrollTrigger: { trigger: el, start: 'top 80%' },
     });
-    gsap.from(el.querySelector('.manifesto__closing'), {
-      opacity: 0,
-      y: 30,
-      duration: 0.9,
-      scrollTrigger: { trigger: el.querySelector('.manifesto__closing'), start: 'top 88%' },
+    gsap.from(el.querySelectorAll('.manifesto__subtitles li'), {
+      opacity: 0, y: 18, duration: 0.7, stagger: 0.08, ease: 'expo.out',
+      scrollTrigger: { trigger: '.manifesto__subtitles', start: 'top 88%' },
     });
-    gsap.from(el.querySelectorAll('.manifesto__role'), {
-      opacity: 0,
-      y: 14,
-      duration: 0.5,
-      stagger: 0.04,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.manifesto__roles-list', start: 'top 90%' },
+    gsap.from(el.querySelector('.manifesto__roles'), {
+      opacity: 0, y: 18, duration: 0.8, ease: 'expo.out',
+      scrollTrigger: { trigger: '.manifesto__roles', start: 'top 92%' },
     });
-    gsap.from(el.querySelector('.manifesto__carousel'), {
-      opacity: 0,
-      y: 30,
-      duration: 0.9,
-      ease: 'expo.out',
-      scrollTrigger: { trigger: '.manifesto__carousel', start: 'top 85%' },
+    gsap.from(el.querySelector('.carousel--photos'), {
+      opacity: 0, y: 30, duration: 0.9, ease: 'expo.out',
+      scrollTrigger: { trigger: '.carousel--photos', start: 'top 85%' },
     });
   }
 
@@ -177,11 +162,10 @@ export function mountManifesto() {
     })
   );
 
-  const carouselEl = el.querySelector('.manifesto__carousel');
+  const carouselEl = el.querySelector('.carousel--photos');
   carouselEl.addEventListener('mouseenter', stop);
   carouselEl.addEventListener('mouseleave', start);
 
-  // Only run the auto-cycle when the carousel is in view
   if (motionOK) {
     ScrollTrigger.create({
       trigger: carouselEl,

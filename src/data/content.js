@@ -43,17 +43,19 @@ export const hero = {
 export const manifesto = {
   eyebrow: '01 / Mission',
   body: 'Global Infrastructure & Sustainable Business Scaling.',
-  closing:
-    'Driving synergies across borders to achieve resilient digital infrastructure, fostering global networking, and building collaborative, future-ready international markets.',
-  rolesLabel: 'Where the work lives',
+  subtitles: [
+    'Sustainability Consultant.',
+    'Strategic Networker.',
+    'International Real Estate Consultant.',
+  ],
   roles: [
     'Philanthropist',
-    'Non-Executive Director',
+    'Non Executive Director',
     'Sustainability Consultant',
     'Data Centre Strategy',
-    'Building Management Systems',
+    '(BMS)',
     'Strategic Restructuring',
-    'Risk Management Committee',
+    'RMC',
     'Forensic Audits',
     'Energy',
     'Warehousing',
@@ -61,50 +63,15 @@ export const manifesto = {
     'Financial Governance',
     'Mentorship',
   ],
-  carouselLabel: 'Practice domains',
+  // Drop photos at public/images/manifesto/01.jpg ... 06.jpg (or whatever path you choose).
+  // `src` is resolved relative to Vite's BASE_URL so it works locally and on GitHub Pages.
   carousel: [
-    {
-      n: '01',
-      tag: 'Digital Infrastructure',
-      title: 'Data Centres for the AI Era.',
-      body: 'Architecting high-tier, energy-efficient compute capacity for the workloads that define the next decade.',
-      tags: ['Data Centre Strategy', 'BMS', 'ESG'],
-    },
-    {
-      n: '02',
-      tag: 'Energy',
-      title: 'Power Generation & Industrial Energy.',
-      body: 'Wärtsilä 18V46 maintenance leadership, PPA compliance, and fuel-and-lube discipline at plant scale.',
-      tags: ['Wärtsilä', 'OEM Contracts', 'PPA'],
-    },
-    {
-      n: '03',
-      tag: 'Forensic Audit',
-      title: 'Forensic Audit & Financial Governance.',
-      body: 'PKR 3 billion in DFI defaulted-loan recoveries — HBL, NDFC, NBP, FIA, NAB, and the Ehtasab Cell.',
-      tags: ['Forensic Audit', 'DFI', 'NAB'],
-    },
-    {
-      n: '04',
-      tag: 'Marine',
-      title: 'Marine Engineering & Shipping.',
-      body: 'Chief Engineer across Iranian, Norwegian, Japanese and UK flags — ten years of sea-time on propulsion plants up to 24,800 BHP.',
-      tags: ['Marine Engineering', 'Dry Docking', 'Propulsion'],
-    },
-    {
-      n: '05',
-      tag: 'Education',
-      title: 'Education & Capacity Building.',
-      body: 'Strategic guidance through Academic Window LLC — policy, youth empowerment, alignment with international standards.',
-      tags: ['Advisory', 'Policy', 'Mentorship'],
-    },
-    {
-      n: '06',
-      tag: 'Cross-Border',
-      title: 'Cross-Border Investment & Synergies.',
-      body: 'Bridging Pakistan and global markets through the Global Chamber and Indus Venture — capital, partnerships, and reform.',
-      tags: ['Boards', 'Partnerships', 'Capital'],
-    },
+    { src: 'images/manifesto/01.jpg', alt: 'Aamir Ahsan Khan', caption: 'Pakistan · 2025' },
+    { src: 'images/manifesto/02.jpg', alt: 'Boardroom engagement', caption: 'London' },
+    { src: 'images/manifesto/03.jpg', alt: 'Industrial site visit', caption: 'Karachi' },
+    { src: 'images/manifesto/04.jpg', alt: 'International delegation', caption: 'Global Chamber' },
+    { src: 'images/manifesto/05.jpg', alt: 'Plant inspection', caption: 'Energy sector' },
+    { src: 'images/manifesto/06.jpg', alt: 'Conference panel', caption: '2024' },
   ],
 };
 
