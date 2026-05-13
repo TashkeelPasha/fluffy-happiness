@@ -10,5 +10,7 @@ export default defineConfig({
     cssCodeSplit: false,
     sourcemap: true,
   },
-  base: '/fluffy-happiness/',
+  // Served from the root of the custom domain (aamirahsankhan.me).
+  // If you ever revert to GitHub Pages project URL, set this to '/fluffy-happiness/'.
+  base: '/',
 });

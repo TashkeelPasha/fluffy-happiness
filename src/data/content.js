@@ -3,7 +3,7 @@ export const meta = {
     'Aamir Ahsan Khan — Corporate Governance · Data Centre Strategy · Marine Engineer · Non-Executive Director',
   description:
     '40+ years driving global digital infrastructure, resilient data-centre strategy, intelligent BMS, and transparent corporate governance. Karachi & London.',
-  url: 'https://tashkeelpasha.github.io/fluffy-happiness/',
+  url: 'https://aamirahsankhan.me/',
   ogImage: '/og-image.jpg',
 };
 
