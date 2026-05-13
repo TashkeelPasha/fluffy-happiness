@@ -5,3 +5,6 @@ dist
 .env
 .env.local
 .vite
+
+# Marketing / social-share assets — local working folder, not part of the build
+posts/
