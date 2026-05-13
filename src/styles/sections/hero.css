@@ -129,14 +129,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center 12%;
-  /* Editorial default — full black & white with a touch of contrast */
-  filter: grayscale(1) contrast(1.08) brightness(1.02);
-  transition: filter 0.7s var(--ease-out-quart);
-}
-
-.hero__portrait:hover .hero__portrait-frame img {
-  /* Reveal the original colours on hover */
-  filter: none;
 }
 
 .hero__portrait-rule {
