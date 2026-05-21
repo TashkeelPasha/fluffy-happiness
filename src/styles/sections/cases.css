@@ -19,7 +19,7 @@
 .cases__eyebrow { color: var(--ink-muted); }
 
 .cases__title {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: var(--fs-display-l);
   line-height: 0.95;
@@ -87,7 +87,7 @@
 }
 
 .case__n {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: 1.85rem;
   color: var(--ink-muted);
@@ -96,7 +96,7 @@
 }
 
 .case__tag {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -104,7 +104,7 @@
 }
 
 .case__title {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: clamp(1.6rem, 2.2vw, 2.25rem);
   line-height: 1.05;
@@ -131,7 +131,7 @@
 }
 
 .case__label {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.66rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -148,7 +148,7 @@
 }
 
 .case__row--outcome .case__text {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   line-height: 1.35;
@@ -172,7 +172,7 @@
 .case:hover .case__tags { border-color: rgba(244, 241, 234, 0.18); }
 
 .case__tags li {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -185,7 +185,7 @@
 
 .cases__foot {
   margin-top: 2.5rem;
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;

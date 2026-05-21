@@ -26,7 +26,7 @@
 }
 
 .edu__school {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.15;
@@ -34,7 +34,7 @@
 }
 
 .edu__detail {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -67,7 +67,7 @@
 }
 
 .education__memberships-list li {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;

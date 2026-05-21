@@ -12,7 +12,7 @@ export function mountHero() {
   const el = document.getElementById('hero');
   if (!el) return;
 
-  const portraitSrc = `${import.meta.env.BASE_URL}images/headshot.png`.replace(/\/+/g, '/');
+  const portraitSrc = `${import.meta.env.BASE_URL}images/headshot.jpg`.replace(/\/+/g, '/');
 
   el.innerHTML = `
     <div class="container hero">
@@ -43,8 +43,8 @@ export function mountHero() {
             <img
               src="${portraitSrc}"
               alt="Portrait of Aamir Ahsan Khan"
-              width="664"
-              height="1292"
+              width="496"
+              height="503"
               loading="eager"
               decoding="async"
             />

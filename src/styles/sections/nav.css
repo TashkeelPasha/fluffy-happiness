@@ -36,7 +36,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.22em;
@@ -68,7 +68,7 @@
 
 .nav__link {
   position: relative;
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -100,7 +100,7 @@
   border: 1px solid currentColor;
   padding: 0.6rem 1.25rem;
   border-radius: 999px;
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;

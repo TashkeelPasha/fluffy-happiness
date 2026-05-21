@@ -30,7 +30,7 @@
 
 .hero__top-left,
 .hero__top-right {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -79,7 +79,7 @@
 }
 
 .hero__stat {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: clamp(2rem, 5.6vw, 7rem);
   line-height: 0.96;
@@ -116,7 +116,7 @@
 }
 
 .hero__name {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: clamp(1.5rem, 2.2vw, 2.25rem);
   line-height: 1.1;
@@ -126,7 +126,7 @@
 }
 
 .hero__role-line {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -137,7 +137,7 @@
 }
 
 .hero__note {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-style: italic;
   font-size: clamp(0.95rem, 1.1vw, 1.15rem);
   color: var(--ink-soft);
@@ -191,7 +191,7 @@
   top: 1rem;
   left: 1rem;
   z-index: 2;
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.66rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -235,7 +235,7 @@
 }
 
 .hero__meta-k {
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -243,7 +243,7 @@
 }
 
 .hero__meta-v {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 1.05rem;
   font-style: italic;
   line-height: 1.25;
@@ -254,7 +254,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
