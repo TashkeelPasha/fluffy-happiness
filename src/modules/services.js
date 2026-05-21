@@ -15,43 +15,27 @@ export function mountServices() {
         <p class="services__intro">${services.intro}</p>
       </header>
 
-      <section class="services__tier">
-        <div class="services__tier-head">
-          <span class="label">${services.standardLabel}</span>
-          <span class="label" style="opacity:0.5">${String(services.standard.length).padStart(2, '0')} disciplines</span>
-        </div>
-        <div class="services__list">
-          ${services.standard
-            .map(
-              (s, i) => `
-            <div class="service" data-cursor>
-              <span class="service__n">${(i + 1).toString().padStart(2, '0')}</span>
-              <span class="service__name">${s}</span>
-            </div>`
-            )
-            .join('')}
-        </div>
-      </section>
+      <ol class="mandates" role="list">
+        ${services.items
+          .map(
+            (m) => `
+          <li class="mandate" data-cursor>
+            <header class="mandate__top">
+              <span class="mandate__n">${m.n}</span>
+              <span class="mandate__rule" aria-hidden="true"></span>
+            </header>
+            <h3 class="mandate__title">${m.title}</h3>
+            <p class="mandate__scope">${m.scope}</p>
+            <div class="mandate__meta">
+              <span class="mandate__meta-label">Ideal counterparty</span>
+              <span class="mandate__meta-value">${m.counterparty}</span>
+            </div>
+          </li>`
+          )
+          .join('')}
+      </ol>
 
-      <section class="services__featured">
-        <div class="services__featured-head">
-          <span class="services__featured-tag">${services.specialised.label}</span>
-          <h3 class="services__featured-title">${services.specialised.title}</h3>
-          <p class="services__featured-intro">${services.specialised.intro}</p>
-        </div>
-        <ul class="services__featured-list">
-          ${services.specialised.items
-            .map(
-              (it, i) => `
-            <li class="services__featured-item">
-              <span class="services__featured-n">${(i + 1).toString().padStart(2, '0')}</span>
-              <span class="services__featured-name">${it}</span>
-              <span class="services__featured-arrow" aria-hidden="true">↗</span>
-            </li>`
-            )
-            .join('')}
-        </ul>
-      </section>
+      <p class="services__note">${services.note}</p>
     </div>
   `;
 
@@ -59,42 +43,32 @@ export function mountServices() {
 
   gsap.from(el.querySelectorAll('.services__head > *'), {
     opacity: 0,
-    y: 30,
+    y: 26,
     duration: 0.9,
     stagger: 0.1,
     ease: 'expo.out',
-    scrollTrigger: { trigger: el, start: 'top 75%' },
+    scrollTrigger: { trigger: el, start: 'top 78%' },
   });
 
-  ScrollTrigger.batch('.service', {
+  ScrollTrigger.batch('.mandate', {
     start: 'top 90%',
     onEnter: (batch) =>
       gsap.from(batch, {
         opacity: 0,
-        y: 40,
-        duration: 0.9,
-        stagger: 0.06,
+        y: 48,
+        duration: 1,
+        stagger: 0.08,
         ease: 'expo.out',
         overwrite: true,
       }),
     once: true,
   });
 
-  gsap.from(el.querySelectorAll('.services__featured-head > *'), {
+  gsap.from(el.querySelector('.services__note'), {
     opacity: 0,
-    y: 30,
-    duration: 0.9,
-    stagger: 0.1,
-    ease: 'expo.out',
-    scrollTrigger: { trigger: '.services__featured', start: 'top 80%' },
-  });
-
-  gsap.from(el.querySelectorAll('.services__featured-item'), {
-    opacity: 0,
-    y: 30,
+    y: 16,
     duration: 0.7,
-    stagger: 0.08,
     ease: 'expo.out',
-    scrollTrigger: { trigger: '.services__featured-list', start: 'top 88%' },
+    scrollTrigger: { trigger: '.services__note', start: 'top 95%' },
   });
 }

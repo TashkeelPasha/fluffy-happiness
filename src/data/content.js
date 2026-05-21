@@ -1,68 +1,74 @@
 export const meta = {
   title:
-    'Aamir Ahsan Khan — Corporate Governance · Data Centre Strategy · Marine Engineer · Non-Executive Director',
+    'AAK Advisory — Aamir Ahsan Khan · Capital · Governance · Forensic Audit',
   description:
-    '40+ years driving global digital infrastructure, resilient data-centre strategy, intelligent BMS, and transparent corporate governance. Karachi & London.',
+    'AAK Advisory — Aamir Ahsan Khan. Forensic audit, corporate governance, capital mandates, and non-executive directorships across the UK, Pakistan, the GCC and the United States. Mandates accepted on a confidential basis.',
   url: 'https://aamirahsankhan.me/',
   ogImage: '/og-image.jpg',
+  brand: 'AAK Advisory',
+  principal: 'Aamir Ahsan Khan',
 };
 
 export const nav = {
-  brand: 'Aamir Ahsan Khan',
+  brand: 'AAK Advisory',
   links: [
     { label: 'Mission', href: '#manifesto' },
-    { label: 'About', href: '#about' },
-    { label: 'Pillars', href: '#pillars' },
-    { label: 'Expertise', href: '#expertise' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Services', href: '#services' },
+    { label: 'Cases', href: '#cases' },
+    { label: 'Mandates', href: '#services' },
+    { label: 'Track Record', href: '#experience' },
+    { label: 'Networks', href: '#networks' },
     { label: 'Voice', href: '#voice' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Introduction', href: '#contact' },
   ],
 };
 
 export const hero = {
-  eyebrow: 'Corporate Governance · Data Centre Strategy',
-  name: 'Aamir Ahsan Khan',
-  roles: [
-    'Marine Engineer',
-    'Corporate Governance Specialist',
-    'Academic Advisor',
-    'Data Centre Strategist',
-    'Non-Executive Director',
+  topLeft: 'AAK Advisory',
+  topRight: 'Mandates · Confidential',
+  stats: [
+    'PKR 3 billion recovered.',
+    '22-year contracts negotiated.',
+    '40 years across four jurisdictions.',
   ],
-  opening:
-    'Driving global digital infrastructure, resilient data-centre strategies, and transparent corporate governance.',
+  name: 'Aamir Ahsan Khan',
+  roleLine: 'Forensic Audit · Corporate Governance · Capital Mandates · Non-Executive Director',
+  note: 'Mandates accepted on a confidential basis.',
   meta: [
-    { k: 'Based', v: 'Karachi & London' },
-    { k: 'Network', v: '79,330+ followers' },
-    { k: 'Window', v: '18 Jan – 30 Mar 2026' },
+    { k: 'Based', v: 'Karachi · London' },
+    { k: 'Jurisdictions', v: 'UK · PK · GCC · USA' },
+    { k: 'Engagements', v: 'By referral · Selective' },
   ],
 };
 
+export const numbers = {
+  eyebrow: '— Proof, in numbers',
+  title: 'By the numbers.',
+  items: [
+    {
+      n: 'PKR 3B',
+      caption: 'Defaulted-loan recoveries executed across HBL · NDFC · NBP · FIA · NAB · Ehtasab Cell',
+    },
+    {
+      n: '22 yrs',
+      caption: 'Wärtsilä 18V46 O&M contract negotiated through to milestone closure',
+    },
+    {
+      n: '525+',
+      caption: 'Cities reached via The Global Chamber Pakistan Advisory Board',
+    },
+    {
+      n: '40+',
+      caption: 'Years across Marine Engineering · Energy · Forensic Audit · Governance',
+    },
+  ],
+  foot: 'Figures verified across public-record matters and consent-disclosed engagements.',
+};
+
 export const manifesto = {
-  eyebrow: '01 / Mission',
+  eyebrow: '— Mission',
   body: 'Global Infrastructure & Sustainable Business Scaling.',
-  subtitles: [
-    'Sustainability Consultant.',
-    'Strategic Networker.',
-    'International Real Estate Consultant.',
-  ],
-  roles: [
-    'Philanthropist',
-    'Non Executive Director',
-    'Sustainability Consultant',
-    'Data Centre Strategy',
-    '(BMS)',
-    'Strategic Restructuring',
-    'RMC',
-    'Forensic Audits',
-    'Energy',
-    'Warehousing',
-    'Fuel Storage',
-    'Financial Governance',
-    'Mentorship',
-  ],
+  positioning:
+    'AAK Advisory accepts mandates in capital, governance, and infrastructure — from boards, family offices, and sovereign DFIs across the UK, Pakistan, the GCC, and the United States.',
   // Photos live at public/images/. Order matches file-naming convention.
   // `src` is resolved relative to Vite's BASE_URL so it works locally and on GitHub Pages.
   carousel: [
@@ -78,6 +84,52 @@ export const manifesto = {
     { src: 'images/9.jpeg', alt: 'Aamir Ahsan Khan' },
     { src: 'images/10.jpeg', alt: 'Aamir Ahsan Khan' },
   ],
+};
+
+export const cases = {
+  eyebrow: '— Selected mandates',
+  title: 'Case studies.',
+  intro:
+    'Anchor engagements drawn from the practice. Counterparties identified where on the public record or by consent; defaulter identities anonymised.',
+  items: [
+    {
+      n: '01',
+      tag: 'Forensic · Recoveries',
+      title: 'Three billion in DFI defaulted-loan recoveries.',
+      situation:
+        'A portfolio of industrial borrowers had defaulted across four Development Finance Institutions over an extended period; existing recovery routes had stalled.',
+      mandate:
+        'Engaged through Redux Forensic Accountants (UK) to design and execute a technical-and-financial forensic audit programme across each portfolio, under FIA, NAB and Ehtasab Cell mandates.',
+      outcome:
+        'PKR 3 billion recovered. Recovery process formalised and replicated across four institutions.',
+      tags: ['HBL', 'NDFC', 'NBP', 'First Leasing Pakistan', 'FIA', 'NAB', 'Ehtasab Cell'],
+    },
+    {
+      n: '02',
+      tag: 'Energy · OEM',
+      title: 'Closing a 22-year O&M contract — at milestone.',
+      situation:
+        'A combined-cycle power complex was approaching the end of a 22-year Operations & Maintenance contract with a global engine OEM, with significant component replacement disputes outstanding.',
+      mandate:
+        'Led commercial negotiations directly with the OEM in Finland — Power Purchase Agreement compliance, OEM contract terms, and capex / opex framing on behalf of the owner.',
+      outcome:
+        'Full replacement of major engine components and auxiliaries executed before contract close — a sector-grade milestone for the asset.',
+      tags: ['Wärtsilä 18V46', 'O&M', 'PPA', 'Gul Ahmed Energy', 'Owner-side'],
+    },
+    {
+      n: '03',
+      tag: 'Audit · Investment',
+      title: 'Bankability audit for a residential megaproject.',
+      situation:
+        'A large coastal residential development required an independent technical audit ahead of a strategic capital decision by an international advisor.',
+      mandate:
+        'Engaged via Meinhardt Group (Singapore) as Internal Auditor — full technical audit of Creek Marina Pakistan Pvt Ltd, with findings packaged for investor review.',
+      outcome:
+        'In-depth technical audit report submitted in view of investment interests; engagement closed within mandate window.',
+      tags: ['Meinhardt Singapore', 'Creek Marina Pakistan', 'Technical audit'],
+    },
+  ],
+  foot: 'Case studies reference matters of public record or engagements disclosed with consent. Counterparty identities subject to confidentiality undertakings.',
 };
 
 export const about = {
@@ -139,7 +191,7 @@ export const recognition = {
   eyebrow: '— Recognition',
   badge: 'Ambassador',
   title: 'Human Rights Ambassador for the International Human Rights Commission.',
-  body: 'Appointed Ambassador for Pakistan in 2011 for the introduction of forensic audits and governance assistance to global entities including the World Bank, IMF, and the Islamic Development Bank.',
+  body: 'Appointed Ambassador for Pakistan in 2011 — recognised by IHRC for the introduction of forensic-audit methodology and governance assistance to the World Bank, IMF, the Islamic Development Bank, and Pakistani regulators (NAB · FIA · Ehtasab Cell).',
   org: 'International Human Rights Commission',
   year: '2011',
   secondary: {
@@ -175,8 +227,10 @@ export const expertise = {
 };
 
 export const experience = {
-  eyebrow: '05 / Experience',
-  title: 'A career across boardrooms, plants and capitals.',
+  eyebrow: '— Track Record',
+  title: 'A practice built across boardrooms, plants, and capitals.',
+  intro:
+    'Forty years across Marine Engineering, Energy, Forensic Audit, and Corporate Governance — UK · Pakistan · GCC · USA. Below: every active mandate, every closed engagement, every quantified outcome on the record.',
   items: [
     {
       period: 'Nov 2025 — Present',
@@ -187,6 +241,7 @@ export const experience = {
       type: 'Full-time',
       blurb:
         'Honoured to join the Global Chamber® Pakistan Advisory Board — an international platform connecting visionary leaders, entrepreneurs, and changemakers across 525+ cities worldwide. Contributing toward building bridges between Pakistan and global markets, empowering youth, and promoting sustainable, diversity-driven initiatives across industries.',
+      outcome: 'Pakistan voice on a 525-city cross-border platform.',
       skills: ['Strategic Vision', 'Strategic Planning'],
       moreSkills: 0,
     },
@@ -199,6 +254,7 @@ export const experience = {
       type: 'Contract · On-site',
       blurb:
         'Turning vision into execution — translating strategic intent into tangible growth. Background in business development, stakeholder engagement, and corporate strategy, committed to creating long-term value and sustainable competitive advantage.',
+      outcome: 'Growth strategy and stakeholder programme for an industrial platform.',
       skills: ['Business Strategy', 'Commissioning'],
       moreSkills: 5,
     },
@@ -211,6 +267,7 @@ export const experience = {
       type: 'Full-time · Hybrid',
       blurb:
         'Strategic vision and business development for an international advisory house. Continuing to scale cross-border partnerships and infrastructure mandates from London.',
+      outcome: 'Three-year cross-border practice — London base, mandates across four jurisdictions.',
       skills: ['Strategic Vision', 'Business Development'],
       moreSkills: 11,
     },
@@ -223,6 +280,7 @@ export const experience = {
       type: 'Full-time',
       blurb:
         'Board oversight on infrastructure maintenance, project engineering, and governance for a private investment mandate.',
+      outcome: 'Independent NED voice on a private investment-group board.',
       skills: ['Building Maintenance', 'Project Engineering'],
       moreSkills: 1,
     },
@@ -235,6 +293,7 @@ export const experience = {
       type: 'Full-time',
       blurb:
         'Business planning and implementation across CPEC projects — close liaison with Shanghai Electric Construction and The Second Construction Company on Thar Coalfield Block 1 (7.8 MTPA Open Pit Coal Mining), Dhabaiji Special Zone development, and ongoing CPEC infrastructure. Procurement SME relationships across machinery and engineering material supply chains.',
+      outcome: 'CPEC procurement SME across Thar Coalfield Block 1 — 7.8 MTPA open-pit coal.',
       skills: ['Strategic Vision', 'Business Development'],
       moreSkills: 15,
     },
@@ -247,6 +306,7 @@ export const experience = {
       type: 'Contract · Remote',
       blurb:
         'Technical & financial forensic audit practice. Conducted Creek Marina Pakistan Pvt Ltd internal audit (2022, a Meinhardt Singapore project). Provided technical assistance and audit for PKR 3 billion defaulted-loan recoveries across HBL, First Leasing Pakistan, NDFC, NBP, FIA, Ehtasab Cell, Ehtasab Bureau, and the National Accountability Bureau.',
+      outcome: 'PKR 3 billion in DFI defaulted-loan recoveries — across HBL · NDFC · NBP · FIA · NAB.',
       skills: ['Strategic Vision', 'Business Development'],
       moreSkills: 7,
     },
@@ -259,6 +319,7 @@ export const experience = {
       type: 'Part-time',
       blurb:
         'Project director for Enormity Charity Foundation initiatives — contractor selection, milestone planning, budget oversight, course-correction on at-risk projects, investor presentations, and proposal review across local and international engagements.',
+      outcome: 'Cross-border charity-foundation project portfolio delivered to milestone.',
       skills: ['Business Development', 'Research Skills'],
       moreSkills: 13,
     },
@@ -271,6 +332,7 @@ export const experience = {
       type: 'Contract · On-site',
       blurb:
         'Conducted internal audit of Creek Marina Pakistan Pvt Ltd on request of the Strategic Business Advisor of Meinhardt, Singapore. In-depth technical audit report submitted to advisor in view of investment interests.',
+      outcome: 'Bankability-grade technical audit submitted to a Singapore advisor.',
       skills: ['Business Development', 'Research Skills'],
       moreSkills: 7,
     },
@@ -283,6 +345,7 @@ export const experience = {
       type: 'Full-time',
       blurb:
         'Owned safe and efficient operation of the complex; managed planned and routine maintenance on Wärtsilä 18V46 engines under the Power Purchase Agreement. Contract management with OEMs and third-party vendors, budgeting and forecasting for spares, supervision of 20+ contractor projects, and risk/contingency planning. Negotiated directly with Wärtsilä Finland; secured full replacement of major engine components and auxiliaries before the 22-year O&M contract closed — a milestone for the company.',
+      outcome: '22-year Wärtsilä 18V46 O&M contract closed with full asset replacement — a sector milestone.',
       skills: ['Customer Satisfaction', 'Business Development'],
       moreSkills: 14,
     },
@@ -295,6 +358,7 @@ export const experience = {
       type: 'Full-time',
       blurb:
         'Joined as Senior Manager Engineering; managed the full project through privatisation of the unit and led the smooth handover to the private sector. Complete restructuring of operations and maintenance, upgrades to fibre line, draw-twisting, hydraulic, air-conditioning and nitrogen plants, computerised inventory rollout, and revival of shelved feasibility studies. Close liaison with Lurgi GmbH on commissioning.',
+      outcome: 'Smooth privatisation handover of a state industrial unit — operations and engineering restructured end-to-end.',
       skills: ['Business Development', 'Business Strategy'],
       moreSkills: 13,
     },
@@ -307,6 +371,7 @@ export const experience = {
       type: 'Full-time',
       blurb:
         'Chief Engineer on oil tankers and cargo vessels under Iranian, Norwegian, Japanese and UK flags. As Marine Superintendent, took over three IRISL cargo ships from Singapore and Japan. Supervised four oil-tanker dry-dockings in Shanghai, Singapore and Germany. Routine maintenance, de-carbonisation, bearing renewals and troubleshooting on marine propulsion diesels up to 24,800 BHP — and the systems around them: steam turbines, boilers, refrigeration, hydraulics, firefighting. Served IRISL on the Death Squad during the Iran–Iraq war.',
+      outcome: '24,800 BHP marine propulsion plants under four-flag command — four oil-tanker dry-dockings supervised.',
       skills: ['Business Development', 'Business Strategy'],
       moreSkills: 10,
     },
@@ -314,75 +379,144 @@ export const experience = {
 };
 
 export const services = {
-  eyebrow: '06 / Services',
-  title: 'Where the consultancy operates.',
+  eyebrow: '— Mandates',
+  title: 'Where the practice engages.',
   intro:
-    'Two arms — broad strategic counsel for boards and growth teams, and a specialised practice for intelligent infrastructure.',
-  standardLabel: 'Standard consultancies',
-  standard: [
-    'Brand Strategy',
-    'Business Expansion',
-    'Educational Advisory',
-    'Management Consulting',
-    'Non-profit Governance',
-    'Project Management',
-    'Healthcare Infrastructure',
-    'Forensic Audits',
+    'Six mandate types across the practice. Engagement sizing and fee structure are confidential to the mandate and disclosed under mutual NDA.',
+  items: [
+    {
+      n: '01',
+      title: 'Capital advisory & raises',
+      scope:
+        'Bankable structuring, investor packaging, and DFI / sovereign engagement for industrial, infrastructure, and energy mandates.',
+      counterparty: 'Project sponsors, family offices, sovereign DFIs, founder-CEOs',
+    },
+    {
+      n: '02',
+      title: 'Forensic audit & financial recovery',
+      scope:
+        'DFI, regulator, and litigation-support engagements. Technical-and-financial audit programmes designed for material recovery.',
+      counterparty: 'DFIs, central banks, regulators, NAB / Ehtasab-grade mandates',
+    },
+    {
+      n: '03',
+      title: 'Non-Executive Director & board placement',
+      scope:
+        'Sole independent voice on boards across UK, Pakistan, GCC and US-affiliated jurisdictions. Governance frameworks, audit committees, risk oversight.',
+      counterparty: 'Founder-led groups, family offices, private investment groups',
+    },
+    {
+      n: '04',
+      title: 'Strategic restructuring',
+      scope:
+        'Operations, governance frameworks, contract renegotiation, and stakeholder-management on legacy or distressed industrial assets.',
+      counterparty: 'Distressed asset owners, post-acquisition operators, IPO candidates',
+    },
+    {
+      n: '05',
+      title: 'Data centre & critical infrastructure',
+      scope:
+        'High-tier data-centre strategy, BMS and OEM stewardship, ESG-grade procurement, energy-systems design.',
+      counterparty: 'Operators, hyperscale-adjacent developers, sovereign infra programmes',
+    },
+    {
+      n: '06',
+      title: 'Marine engineering & energy advisory',
+      scope:
+        'OEM stewardship (Wärtsilä-class), PPA compliance, dry-docking, fuel and lube discipline, plant lifecycle decisions.',
+      counterparty: 'Power producers, marine operators, sovereign energy programmes',
+    },
   ],
-  specialised: {
-    label: 'Specialised practice',
-    title: 'Data Centres & Building Management Systems.',
-    intro:
-      'Intelligent infrastructure & system governance — end-to-end strategic advisory, system architecture, and forensic oversight for intelligent, energy-efficient, and secure infrastructure.',
-    items: [
-      'Data Centre & Critical Infrastructure Strategy',
-      'Energy Optimisation & Strategic Auditing',
-      'Infrastructure Modernisation & Automation',
-      'Risk Management & International ESG Compliance',
-      'Transparent Procurement & Project Engineering',
-    ],
-  },
+  note: 'Engagements accepted by referral, on a retainer plus success-fee basis. Engagement sizing is confidential to the mandate.',
 };
 
 export const voice = {
-  eyebrow: '07 / Voice',
-  title: 'On record.',
+  eyebrow: '— On record',
+  title: 'Notes from the practice.',
   intro:
-    'Public commentary on digital infrastructure, sustainable energy, governance, and the discipline a global digital economy demands.',
+    'Selected positions on capital, governance, and infrastructure — written for boards, sovereign DFIs, and operators considering mandate-grade engagements.',
   items: [
     {
       n: '01',
       tag: 'Digital Infrastructure',
-      title: 'Architecting High-Density Data Centres for the AI Era.',
+      title: 'Architecting high-density data centres for the AI era.',
       excerpt:
-        'AI-scale workloads demand a different topology, cooling regime, and energy profile than the legacy hyperscale playbook. The next decade will be won by operators who can build for density without compromising governance.',
+        'How AAK Advisory engages on AI-scale data-centre mandates — topology, cooling regime, energy procurement, and the BMS / governance discipline that turns capex commitments into bankable assets.',
     },
     {
       n: '02',
       tag: 'Sustainability',
-      title: 'The Crucial Role of ESG in Modern Infrastructure Development.',
+      title: 'ESG as underwriting standard, not reporting obligation.',
       excerpt:
-        'ESG is no longer a reporting obligation — it is the underwriting standard for the next generation of capital. Projects that cannot show measurable environmental discipline are being priced out, not greenwashed in.',
+        'Where the practice draws the line on green-washed mandates. Why measurable environmental discipline is now the floor for DFI and family-office capital — and how to engineer for it from term-sheet onward.',
     },
     {
       n: '03',
       tag: 'Governance',
-      title: 'Corporate Governance in the Age of Smart Facilities and Automation.',
+      title: 'Boards and the BMS audit trail.',
       excerpt:
-        'When buildings make decisions, governance has to follow them into the system. Boards now need fluency in BMS architecture, predictive maintenance, and the audit trails that intelligent automation either creates — or destroys.',
+        'Smart facilities create — or destroy — the governance record. How NED and audit-committee mandates need to evolve as buildings make decisions, and what the audit trail must capture for a regulator’s test.',
     },
     {
       n: '04',
-      tag: 'Investment',
-      title: 'UK / Europe Thermal Power Assets for African Deployment: A Strategic Playbook.',
+      tag: 'Capital',
+      title: 'UK / Europe thermal assets for African deployment.',
       excerpt:
-        'A bankable approach to repurposing UK gas and legacy thermal assets for emerging-market deployment — within regulatory and ESG frameworks, and structured to deliver reliable, low-carbon electricity to African grids.',
+        'A bankable playbook for repurposing UK gas and legacy thermal assets into emerging-market electricity. Within regulatory and ESG frameworks — and structured for African-grid offtakers who actually pay.',
     },
   ],
 };
 
+export const independence = {
+  eyebrow: '— Independence',
+  title: 'Conflict posture & engagement terms.',
+  body:
+    'Engagements are accepted on a retainer plus success-fee basis. No equity is held in advised entities. No introducer or finder fees. All counterparties acknowledged before mandate acceptance. References available on request.',
+};
+
+export const networks = {
+  eyebrow: '— Networks & affiliations',
+  title: 'Where the practice operates.',
+  intro:
+    'Four jurisdictions, three columns of institutional context — the network of regulators, DFIs, OEMs, and professional bodies that shape every mandate.',
+  columns: [
+    {
+      label: 'Jurisdictions',
+      items: [
+        'London · United Kingdom',
+        'Karachi · Pakistan',
+        'Manchester · United Kingdom',
+        'Bahrain · GCC',
+        'USA · advisory',
+      ],
+    },
+    {
+      label: 'Institutions & counterparties',
+      items: [
+        'World Bank · IMF · Islamic Development Bank',
+        'HBL · NDFC · NBP · First Leasing Pakistan',
+        'FIA · NAB · Ehtasab Cell · Ehtasab Bureau',
+        'The Global Chamber — 525+ cities',
+        'Wärtsilä · Shanghai Electric · Lurgi GmbH',
+        'Meinhardt Group · Academic Window LLC',
+      ],
+    },
+    {
+      label: 'Professional bodies',
+      items: [
+        'Institute of Marine Engineers (UK)',
+        'NFPA',
+        'International Gas Turbine Institute',
+        'The Institution of Engineers Pakistan',
+      ],
+    },
+  ],
+  foot:
+    'Standing across UK, Pakistani, GCC, and US company-law jurisdictions. AML and Fraud-Detection diploma — PIM, Pakistan.',
+};
+
 export const education = {
-  eyebrow: '— Education & credentials',
+  eyebrow: '— Credentials',
   items: [
     {
       school: 'South Shields Marine School (UK)',
@@ -401,27 +535,39 @@ export const education = {
       detail: 'Fire & Disaster Control · 2001',
     },
   ],
-  membershipsLabel: 'Professional memberships',
-  memberships: [
-    'Institute of Marine Engineers (UK)',
-    'NFPA',
-    'International Gas Turbine Institute',
-  ],
 };
 
 export const contact = {
-  eyebrow: '08 / Contact',
-  pre: 'Currently in Karachi & London',
-  windowLine: '18 January — 30 March 2026',
-  title: 'For acquisitions, advisory mandates, and conversations that move global projects forward.',
-  cta: [
-    { label: 'Request a meeting', href: 'mailto:contact@aamirahsankhan.com', kind: 'primary' },
-    { label: 'Connect on LinkedIn', href: 'https://www.linkedin.com/', kind: 'ghost' },
+  eyebrow: '— Introduction',
+  pre: 'Confidential introduction',
+  windowLine: 'In London · 18 January – 30 March 2026',
+  title: 'Mandate type. Jurisdiction. Timeline.',
+  body:
+    'Introductions are accepted by referral or qualified approach. Engagement details, fee structure, and counterparty disclosure are confidential to the mandate and discussed under mutual NDA.',
+  prompts: [
+    { k: 'Mandate type', v: 'Capital · Forensic · NED · Restructuring · Infrastructure' },
+    { k: 'Jurisdiction', v: 'UK · Pakistan · GCC · USA · Other' },
+    { k: 'Timeline', v: 'Immediate · 2026 · 2026–27 · Open' },
   ],
+  cta: [
+    {
+      label: 'Open a confidential introduction',
+      href: 'mailto:mandates@aamirahsankhan.me?subject=Confidential%20introduction%20%E2%80%93%20AAK%20Advisory&body=Mandate%20type%3A%20%0AJurisdiction%3A%20%0ATimeline%3A%20%0A%0ABrief%20context%20(no%20confidential%20particulars%20at%20this%20stage)%3A%20%0A%0AYour%20referrer%20(if%20any)%3A%20%0A',
+      kind: 'primary',
+    },
+    {
+      label: 'Request a mutual NDA before disclosure',
+      href: 'mailto:mandates@aamirahsankhan.me?subject=NDA%20request%20%E2%80%93%20AAK%20Advisory&body=Requesting%20a%20mutual%20NDA%20before%20disclosing%20mandate%20particulars.%0A%0AOrganisation%3A%20%0AJurisdiction%3A%20%0ASignatory%20capacity%3A%20%0A',
+      kind: 'ghost',
+    },
+  ],
+  foot: 'By referral or qualified introduction. Mandates accepted selectively.',
 };
 
 export const footer = {
-  marquee: 'Aamir Ahsan Khan',
-  copy: '© 2026 Aamir Ahsan Khan. All rights reserved.',
+  marquee: 'AAK Advisory',
+  discretion: 'Confidentiality is foundational to every mandate. References on request.',
+  jurisdiction: 'Standing across UK · Pakistani · GCC · US company-law jurisdictions.',
+  copy: '© 2026 AAK Advisory — Aamir Ahsan Khan. All rights reserved.',
   mark: 'AAK',
 };

@@ -6,6 +6,10 @@
 @import './sections/preloader.css';
 @import './sections/nav.css';
 @import './sections/hero.css';
+@import './sections/numbers.css';
+@import './sections/cases.css';
+@import './sections/networks.css';
+@import './sections/independence.css';
 @import './sections/manifesto.css';
 @import './sections/about.css';
 @import './sections/pillars.css';

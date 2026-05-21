@@ -14,6 +14,10 @@ export function mountFooter() {
       </div>
     </div>
     <div class="container">
+      <div class="footer__discretion">
+        <p class="footer__discretion-line">${footer.discretion}</p>
+        <p class="footer__jurisdiction-line">${footer.jurisdiction}</p>
+      </div>
       <div class="footer__bottom">
         <span class="footer__copy">${footer.copy}</span>
         <span class="footer__mark serif-italic">${footer.mark}</span>

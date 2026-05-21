@@ -12,6 +12,7 @@ export function mountExperience() {
       <header class="experience__head">
         <span class="eyebrow">${experience.eyebrow}</span>
         <h2 id="experience-title" class="experience__title">${experience.title}</h2>
+        ${experience.intro ? `<p class="experience__intro">${experience.intro}</p>` : ''}
       </header>
       <div class="experience__wrap">
         <aside class="experience__sticky">
@@ -40,6 +41,11 @@ export function mountExperience() {
                   <span>${e.type}</span>
                 </div>
                 <p class="exp__blurb">${e.blurb}</p>
+                ${
+                  e.outcome
+                    ? `<p class="exp__outcome"><span class="exp__outcome-label">Outcome</span>${e.outcome}</p>`
+                    : ''
+                }
                 ${
                   e.skills?.length
                     ? `<ul class="exp__skills">

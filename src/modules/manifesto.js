@@ -29,12 +29,7 @@ export function mountManifesto() {
       <div class="manifesto__grid">
         <div class="manifesto__left">
           <h2 id="manifesto-title" class="manifesto__body">${words}</h2>
-          <ul class="manifesto__subtitles">
-            ${manifesto.subtitles.map((s) => `<li>${s}</li>`).join('')}
-          </ul>
-          <p class="manifesto__roles">
-            ${manifesto.roles.map((r) => `<span>${r}</span>`).join('<span class="manifesto__roles-sep" aria-hidden="true">·</span>')}
-          </p>
+          <p class="manifesto__positioning">${manifesto.positioning}</p>
         </div>
 
         <aside class="manifesto__right">
@@ -98,13 +93,9 @@ export function mountManifesto() {
       opacity: 0, y: 20, duration: 0.8,
       scrollTrigger: { trigger: el, start: 'top 80%' },
     });
-    gsap.from(el.querySelectorAll('.manifesto__subtitles li'), {
-      opacity: 0, y: 18, duration: 0.7, stagger: 0.08, ease: 'expo.out',
-      scrollTrigger: { trigger: '.manifesto__subtitles', start: 'top 88%' },
-    });
-    gsap.from(el.querySelector('.manifesto__roles'), {
-      opacity: 0, y: 18, duration: 0.8, ease: 'expo.out',
-      scrollTrigger: { trigger: '.manifesto__roles', start: 'top 92%' },
+    gsap.from(el.querySelector('.manifesto__positioning'), {
+      opacity: 0, y: 24, duration: 0.9, ease: 'expo.out',
+      scrollTrigger: { trigger: '.manifesto__positioning', start: 'top 90%' },
     });
     gsap.from(el.querySelector('.carousel--photos'), {
       opacity: 0, y: 30, duration: 0.9, ease: 'expo.out',

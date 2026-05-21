@@ -1,0 +1,49 @@
+.section--independence {
+  padding-block: var(--space-10);
+}
+
+.independence__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: clamp(2.25rem, 4vw, 3.5rem);
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+  position: relative;
+}
+
+.independence__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.independence__head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.independence__title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  margin: 0;
+  max-width: 24ch;
+}
+
+.independence__body {
+  margin: 0;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 64ch;
+}

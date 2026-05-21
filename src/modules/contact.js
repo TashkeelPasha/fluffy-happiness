@@ -7,10 +7,27 @@ export function mountContact() {
 
   el.innerHTML = `
     <div class="container--narrow contact">
-      <span class="eyebrow">${contact.eyebrow}</span>
-      <span class="contact__pre">${contact.pre}</span>
-      <span class="contact__window">${contact.windowLine}</span>
+      <header class="contact__head">
+        <span class="eyebrow">${contact.eyebrow}</span>
+        <span class="contact__window mono">${contact.windowLine}</span>
+      </header>
+
       <h2 id="contact-title" class="contact__title">${contact.title}</h2>
+
+      <p class="contact__body">${contact.body}</p>
+
+      <ul class="contact__prompts" aria-label="Introduction prompts">
+        ${contact.prompts
+          .map(
+            (p) => `
+          <li class="contact__prompt">
+            <span class="contact__prompt-k">${p.k}</span>
+            <span class="contact__prompt-v">${p.v}</span>
+          </li>`
+          )
+          .join('')}
+      </ul>
+
       <div class="contact__cta">
         ${contact.cta
           .map(
@@ -19,6 +36,8 @@ export function mountContact() {
           )
           .join('')}
       </div>
+
+      <p class="contact__foot">${contact.foot}</p>
     </div>
   `;
 
@@ -26,10 +45,19 @@ export function mountContact() {
 
   gsap.from(el.querySelectorAll('.container--narrow > *'), {
     opacity: 0,
-    y: 40,
+    y: 32,
     duration: 0.9,
+    stagger: 0.08,
+    ease: 'expo.out',
+    scrollTrigger: { trigger: el, start: 'top 78%' },
+  });
+
+  gsap.from(el.querySelectorAll('.contact__prompt'), {
+    opacity: 0,
+    y: 18,
+    duration: 0.7,
     stagger: 0.1,
     ease: 'expo.out',
-    scrollTrigger: { trigger: el, start: 'top 75%' },
+    scrollTrigger: { trigger: '.contact__prompts', start: 'top 88%' },
   });
 }
