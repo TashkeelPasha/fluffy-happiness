@@ -13,13 +13,7 @@
 }
 
 .independence__card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 88px;
-  height: 4px;
-  background: var(--accent);
+  content: none;
 }
 
 .independence__head {

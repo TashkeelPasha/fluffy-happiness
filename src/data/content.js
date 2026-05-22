@@ -606,7 +606,7 @@ export const contact = {
   // and any CDN-hosted static site. Replace ACCESS_KEY with the key from
   // https://web3forms.com/ (free, just requires an email confirmation).
   form: {
-    accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+    accessKey: '107f1643-b71a-4c11-8084-e4bba9a95d69',
     endpoint: 'https://api.web3forms.com/submit',
     replyEmail: 'contact@aamirahsankhan.me',
     subject: 'Confidential introduction — AAK Advisory',

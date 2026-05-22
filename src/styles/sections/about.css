@@ -85,12 +85,7 @@
 }
 
 .about__p:first-child::before {
-  content: '';
-  display: block;
-  width: 2rem;
-  height: 2px;
-  background: var(--accent);
-  margin-bottom: 1rem;
+  content: none;
 }
 
 /* Passion */

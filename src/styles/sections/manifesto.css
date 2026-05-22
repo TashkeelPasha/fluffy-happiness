@@ -1,7 +1,6 @@
 .section--manifesto {
   height: 100svh;
-  min-height: 720px;
-  max-height: 100svh;
+  min-height: 100svh;
   display: flex;
   align-items: stretch;
   padding-top: clamp(5rem, 8vh, 6.5rem);
@@ -273,4 +272,15 @@
   .carousel__dots { justify-content: center; }
   .carousel__nav { justify-content: center; }
   .manifesto__body { font-size: clamp(2rem, 8vw, 3.5rem); }
+}
+
+/* Short viewports — release the 100svh lock so the carousel never overlaps the headline */
+@media (min-width: 1101px) and (max-height: 780px) {
+  .section--manifesto {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+    padding-block: 7rem 4rem;
+  }
+  .manifesto { height: auto; }
 }

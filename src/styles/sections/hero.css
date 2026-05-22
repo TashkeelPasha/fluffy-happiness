@@ -1,7 +1,6 @@
 .section--hero {
   height: 100svh;
-  min-height: 720px;
-  max-height: 100svh;
+  min-height: 100svh;
   display: flex;
   align-items: stretch;
   padding-top: clamp(5rem, 7vh, 6.5rem);
@@ -170,7 +169,8 @@
   top: 0.65em;
   width: 0.5rem;
   height: 1px;
-  background: var(--accent);
+  background: var(--ink-muted);
+  opacity: 0.6;
 }
 
 .hero__ctas {
@@ -378,4 +378,19 @@
   }
   .hero__meta { grid-template-columns: 1fr; gap: 1rem; }
   .hero__scroll { display: none; }
+}
+
+/* Short viewports — release the 100svh lock and stop bottom-aligning text so
+   bullets/CTAs can't crash into the meta strip */
+@media (min-width: 821px) and (max-height: 760px) {
+  .section--hero {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+    padding-block: 7rem 3rem;
+  }
+  .hero { height: auto; }
+  .hero__main { align-items: start; }
+  .hero__text { align-self: start; gap: 1.25rem; }
+  .hero__portrait-frame { max-height: 55vh; }
 }
