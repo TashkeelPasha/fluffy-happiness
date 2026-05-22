@@ -26,13 +26,19 @@ export const hero = {
   topLeft: 'AAK Advisory',
   topRight: 'Mandates · Confidential',
   stats: [
-    'PKR 3 billion recovered.',
-    '22-year contracts negotiated.',
-    '40 years across four jurisdictions.',
+    'USD 1B+ in components negotiated.',
+    'USD 10M+ in DFI recoveries.',
+    '40 years across nine sectors.',
   ],
   name: 'Aamir Ahsan Khan',
-  roleLine: 'Forensic Audit · Corporate Governance · Capital Mandates · Non-Executive Director',
-  note: 'Mandates accepted on a confidential basis.',
+  bulletsLabel: 'Who I am',
+  bullets: [
+    'UK 1st Class Marine Chief Engineer → board-grade advisor.',
+    'Forensic-audit principal — USD 10M+ recovered for HBL · NDFC · NBP · FIA · NAB.',
+    'Non-Executive Director, capital advisor & mentor across UK · PK · GCC · USA.',
+    'Ambassador for Pakistan — International Human Rights Commission (2011).',
+    'Mandates accepted by referral, on a strictly confidential basis.',
+  ],
   meta: [
     { k: 'Based', v: 'Karachi · London' },
     { k: 'Jurisdictions', v: 'UK · PK · GCC · USA' },
@@ -45,12 +51,12 @@ export const numbers = {
   title: 'By the numbers.',
   items: [
     {
-      n: 'PKR 3B',
-      caption: 'Defaulted-loan recoveries executed across HBL · NDFC · NBP · FIA · NAB · Ehtasab Cell',
+      n: 'USD 1 B+',
+      caption: 'Wärtsilä major engine components & auxiliaries secured under the closing 22-year Gul Ahmed Energy O&M contract',
     },
     {
-      n: '22 yrs',
-      caption: 'Wärtsilä 18V46 O&M contract negotiated through to milestone closure',
+      n: 'USD 10 M+',
+      caption: 'Defaulted-loan recoveries executed across HBL · NDFC · NBP · FIA · NAB · Ehtasab Cell',
     },
     {
       n: '525+',
@@ -58,10 +64,11 @@ export const numbers = {
     },
     {
       n: '40+',
-      caption: 'Years across Marine Engineering · Energy · Forensic Audit · Governance',
+      caption:
+        'Years across Marine Engineering · Energy · Forensic Audit · Governance · Aviation Venture · Building Management Systems · Oil Trading · Real Estate Development · Mentorship',
     },
   ],
-  foot: 'Figures verified across public-record matters and consent-disclosed engagements.',
+  foot: 'Figures verified across public-record matters and consent-disclosed engagements. USD equivalents indicative at prevailing exchange.',
 };
 
 export const manifesto = {
@@ -86,6 +93,56 @@ export const manifesto = {
   ],
 };
 
+export const about = {
+  eyebrow: '— About',
+  title: 'In his own words.',
+  motto: 'One individual combined with the brazen truth constitutes a majority.',
+  mottoAttribution: 'Aamir Ahsan Khan — guiding principle of the practice.',
+  paragraphs: [
+    "Aamir Ahsan Khan is a UK 1st Class Marine Chief Engineer turned Industrial Modernisation Specialist, Corporate Governance Principal, Non-Executive Director, and Academic Advisor. Central to the practice is an unwavering commitment to excellence — across petrochemical power plants, cement manufacturing, energy operations, building management systems, and the intricate domains of merger & acquisition facilitation.",
+    "Forty years of international exposure across the UK, Pakistan, the GCC, and the United States have built a comprehensive understanding of global industrial landscapes — cross-cultural insights, region-specific solutions, and the disciplined application of best practice across borders. Each engagement carries the same governing principle: capital deserves conscience, infrastructure deserves discipline.",
+    "The work is quantified — USD 10 million+ in DFI defaulted-loan recoveries; USD 1 billion+ in major engine components and auxiliaries secured under the closing 22-year Wärtsilä O&M contract at Gul Ahmed Energy; the privatisation handover of National Fibers Ltd.; the technical audit of Creek Marina Pakistan; direct CPEC procurement liaison across Thar Coalfield Block 1 (7.8 MTPA) and the Dhabaiji Special Zone.",
+    "A particular area of specialism is the Reverse Migration City (RMC) framework — planning and developing reverse migration cities within construction zones, integrating infrastructure, employment ecosystems, policy alignment, and sustainable urban–industrial models that attract returning talent and international investment back to the homeland.",
+    "Adjacent specialisms include M&A facilitation and exhaustive due diligence — the meticulous planning and meticulous execution that lets a board, a family office, or a sovereign DFI commit capital with conviction. Strategic restructuring sits alongside it: the ability to read an existing structure, identify the inefficiency, and propose the actionable plan that streamlines operations without breaking institutional trust.",
+    "Recognition includes Pakistan's IHRC Ambassadorship (2011) for the introduction of forensic-audit methodology, and a 1999 listing in Who's Who. Boards served include Redux Forensic Accountants (UK), First Dawood Properties Limited, Enormity Group (Bahrain), and Academic Window LLC (USA). The mission has always been simple — a debt-free, corruption-free homeland built through ethical leadership, transparent regulation, and institutional discipline.",
+  ],
+  passionLabel: 'Where the passion sits',
+  passions: [
+    {
+      n: '01',
+      title: 'Industrial modernisation',
+      body: 'Revitalising petrochemical power plants, cement manufacturing, BMS, and energy operations through advanced technologies, regulatory compliance, and environmental sustainability.',
+    },
+    {
+      n: '02',
+      title: 'Reverse Migration City (RMC)',
+      body: 'Planning sustainable urban–industrial models inside construction zones — infrastructure, employment, and policy alignment that attract returning talent and international capital.',
+    },
+    {
+      n: '03',
+      title: 'M&A facilitation & due diligence',
+      body: 'The nuanced strategies and meticulous execution that mergers and acquisitions demand; exhaustive due diligence as the precondition of any bankable decision.',
+    },
+    {
+      n: '04',
+      title: 'Anti-corruption forensic audit',
+      body: 'As a tool of recovery, not punishment. Capital should be returned to the institutions and to the people who deserve it.',
+    },
+    {
+      n: '05',
+      title: 'Strategic restructuring',
+      body: 'Reading existing structures, identifying inefficiencies, and proposing actionable plans that streamline operations and protect institutional trust.',
+    },
+    {
+      n: '06',
+      title: 'Mentorship & next-generation leadership',
+      body: 'Pakistani engineers and corporate leaders carrying the discipline forward — at home, in the diaspora, and through Academic Window LLC in the United States.',
+    },
+  ],
+  closing:
+    'Selected engagements only. References on request. Engagement details, sizing, and counterparty disclosure are confidential to the mandate.',
+};
+
 export const cases = {
   eyebrow: '— Selected mandates',
   title: 'Case studies.',
@@ -95,13 +152,13 @@ export const cases = {
     {
       n: '01',
       tag: 'Forensic · Recoveries',
-      title: 'Three billion in DFI defaulted-loan recoveries.',
+      title: 'Ten million dollars in DFI defaulted-loan recoveries.',
       situation:
         'A portfolio of industrial borrowers had defaulted across four Development Finance Institutions over an extended period; existing recovery routes had stalled.',
       mandate:
         'Engaged through Redux Forensic Accountants (UK) to design and execute a technical-and-financial forensic audit programme across each portfolio, under FIA, NAB and Ehtasab Cell mandates.',
       outcome:
-        'PKR 3 billion recovered. Recovery process formalised and replicated across four institutions.',
+        'USD 10 million+ recovered. Recovery process formalised and replicated across four institutions.',
       tags: ['HBL', 'NDFC', 'NBP', 'First Leasing Pakistan', 'FIA', 'NAB', 'Ehtasab Cell'],
     },
     {
@@ -132,61 +189,6 @@ export const cases = {
   foot: 'Case studies reference matters of public record or engagements disclosed with consent. Counterparty identities subject to confidentiality undertakings.',
 };
 
-export const about = {
-  eyebrow: '02 / About',
-  stat: '40+',
-  statLabel: 'Years across engineering, governance, education, and leadership',
-  title: 'Marine Engineer, Corporate Governance Specialist, and Academic Advisor.',
-  paragraphs: [
-    'Aamir Ahsan Khan is a distinguished Marine Engineer, Corporate Governance Specialist, and Academic Advisor with over 40 years of multifaceted experience in engineering, energy, infrastructure, education, and financial audit across Pakistan and internationally. Evolving from a Marine Chief Engineer to senior board and advisory roles, he blends deep technical proficiency with expertise in governance, risk management, forensic auditing, and Building Management Systems (BMS).',
-    'Throughout his career, Aamir has led modernisation and restructuring initiatives in petrochemical, power, and cement sectors — integrating advanced technologies, optimising energy systems, and establishing governance frameworks that drive operational transparency and financial sustainability. His leadership has consistently delivered multi-million-rupee recoveries and efficiency improvements while strengthening institutional accountability.',
-    'As an Academic Advisor with Academic Window LLC (USA), he provides strategic guidance to educational institutions — focusing on preventive counselling, policy development, and youth empowerment programmes. He is deeply engaged in international networks, collaborating on diversified, sustainable projects that promote clean energy, educational reform, and corporate ethics.',
-  ],
-  impactLabel: 'Key impact',
-  impact:
-    'A trusted advisor in complex, multidisciplinary environments — bridging engineering expertise with strategic leadership and cross-cultural collaboration to deliver measurable recoveries, scalable governance, and durable institutional reform.',
-  boardsLabel: 'Boards & affiliations',
-  boards: [
-    'Redux Forensic Accountants — UK',
-    'First Dawood Properties Limited',
-    'Enormity Group — Bahrain',
-    'Academic Window LLC — USA',
-  ],
-};
-
-export const pillars = {
-  eyebrow: '03 / Pillars',
-  title: 'Five pillars of strategic growth.',
-  body: 'A through-line across every engagement — from boardroom to plant floor to data hall.',
-  items: [
-    {
-      n: '01',
-      title: 'Data Centre Strategy & Resilient Infrastructure',
-      body: 'Architecting high-tier, energy-efficient data centres to power the global digital economy.',
-    },
-    {
-      n: '02',
-      title: 'Global Synergies & Cross-Border Investment',
-      body: 'Facilitating strategic partnerships and scaling operations across international markets.',
-    },
-    {
-      n: '03',
-      title: 'ESG & Sustainable Energy Solutions',
-      body: 'Driving industrial modernisation and green energy transitions for legacy assets.',
-    },
-    {
-      n: '04',
-      title: 'Institutional Governance & Forensic Oversight',
-      body: 'Implementing zero-tolerance risk management and transparent procurement frameworks.',
-    },
-    {
-      n: '05',
-      title: 'Intelligent Building Systems (BMS)',
-      body: 'Future-proofing commercial real estate through automation, predictive maintenance, and optimised energy grids.',
-    },
-  ],
-};
-
 export const recognition = {
   eyebrow: '— Recognition',
   badge: 'Ambassador',
@@ -198,32 +200,6 @@ export const recognition = {
     label: 'Earlier honour',
     text: 'Listed in Who’s Who, 1999.',
   },
-};
-
-export const expertise = {
-  eyebrow: '04 / Core expertise',
-  title: 'Where the work happens.',
-  marquee: [
-    'Data Centre Strategy',
-    'Building Management Systems',
-    'Corporate Strategy',
-    'International Business Development',
-    'Forensic Audits',
-    'Risk Management',
-    'Strategic Restructuring',
-    'Industrial Modernisation',
-    'Energy Systems',
-    'Marine Engineering',
-    'Negotiation',
-    'Change Management',
-  ],
-  topSkills: [
-    'Data Centre Strategy',
-    'Building Management Systems',
-    'International Business Development',
-    'Corporate Strategy',
-    'Negotiation',
-  ],
 };
 
 export const experience = {
@@ -305,8 +281,8 @@ export const experience = {
       location: 'Manchester, United Kingdom',
       type: 'Contract · Remote',
       blurb:
-        'Technical & financial forensic audit practice. Conducted Creek Marina Pakistan Pvt Ltd internal audit (2022, a Meinhardt Singapore project). Provided technical assistance and audit for PKR 3 billion defaulted-loan recoveries across HBL, First Leasing Pakistan, NDFC, NBP, FIA, Ehtasab Cell, Ehtasab Bureau, and the National Accountability Bureau.',
-      outcome: 'PKR 3 billion in DFI defaulted-loan recoveries — across HBL · NDFC · NBP · FIA · NAB.',
+        'Technical & financial forensic audit practice. Conducted Creek Marina Pakistan Pvt Ltd internal audit (2022, a Meinhardt Singapore project). Provided technical assistance and audit for USD 10 million+ in defaulted-loan recoveries across HBL, First Leasing Pakistan, NDFC, NBP, FIA, Ehtasab Cell, Ehtasab Bureau, and the National Accountability Bureau.',
+      outcome: 'USD 10 M+ in DFI defaulted-loan recoveries — across HBL · NDFC · NBP · FIA · NAB.',
       skills: ['Strategic Vision', 'Business Development'],
       moreSkills: 7,
     },
@@ -344,8 +320,8 @@ export const experience = {
       location: 'Karachi, Pakistan',
       type: 'Full-time',
       blurb:
-        'Owned safe and efficient operation of the complex; managed planned and routine maintenance on Wärtsilä 18V46 engines under the Power Purchase Agreement. Contract management with OEMs and third-party vendors, budgeting and forecasting for spares, supervision of 20+ contractor projects, and risk/contingency planning. Negotiated directly with Wärtsilä Finland; secured full replacement of major engine components and auxiliaries before the 22-year O&M contract closed — a milestone for the company.',
-      outcome: '22-year Wärtsilä 18V46 O&M contract closed with full asset replacement — a sector milestone.',
+        'Owned safe and efficient operation of the complex; managed planned and routine maintenance on Wärtsilä 18V46 engines under the Power Purchase Agreement. Contract management with OEMs and third-party vendors, budgeting and forecasting for spares, supervision of 20+ contractor projects, and risk/contingency planning. Negotiated directly with Wärtsilä Finland; secured USD 1 billion+ in replacement of major engine components and auxiliaries before the 22-year O&M contract closed — a milestone for the company.',
+      outcome: 'USD 1 B+ in Wärtsilä 18V46 components & auxiliaries secured — 22-year O&M closed at milestone.',
       skills: ['Customer Satisfaction', 'Business Development'],
       moreSkills: 14,
     },

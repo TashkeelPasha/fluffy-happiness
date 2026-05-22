@@ -1,127 +1,192 @@
 .section--about {
   padding-block: var(--space-11);
+  background: var(--paper);
 }
 
 .about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
-
-.about__left {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  position: sticky;
-  top: 7rem;
+  gap: 4.5rem;
 }
 
-.about__stat {
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(7rem, 16vw, 18rem);
-  line-height: 0.85;
-  letter-spacing: -0.045em;
-  color: var(--ink);
-  font-feature-settings: 'tnum';
-}
-
-.about__stat-label {
-  max-width: 22ch;
-  color: var(--ink-muted);
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  line-height: 1.6;
-}
-
-.about__right {
+.about__head {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-}
-
-.about__title {
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  letter-spacing: -0.022em;
-  line-height: 1.05;
-  max-width: 22ch;
+  gap: 1.25rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--rule);
 }
 
-.about__paragraphs {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
+.about__eyebrow { color: var(--ink-muted); }
 
-.about__paragraphs p {
-  font-size: var(--fs-body-l);
-  line-height: 1.55;
-  color: var(--ink-soft);
-}
-
-.about__impact {
-  margin-top: 1rem;
-  padding: 2rem;
-  border: 1px solid var(--rule);
-  background: var(--paper-deep);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.about__impact-label {
+.about__title {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
+  font-weight: 500;
+  font-size: var(--fs-display-l);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+  max-width: 14ch;
+}
+
+/* Motto — large centred quote in Oswald (upright, no italics) */
+.about__motto {
+  margin: 0;
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.about__motto-text {
+  margin: 0;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  max-width: 24ch;
+  position: relative;
+}
+
+.about__motto-text > span {
+  color: var(--accent);
+  font-size: 0.9em;
+  vertical-align: -0.05em;
+  margin-inline: 0.05em;
+}
+
+.about__motto-attr {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
 
-.about__impact-body {
+/* Bio paragraphs */
+.about__body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 4rem;
+  max-width: 100%;
+}
+
+.about__p {
+  margin: 0;
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+
+.about__p:first-child::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Passion */
+.about__passion {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--rule);
+}
+
+.about__passion-head { display: flex; }
+
+.about__passion-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+
+.about__passion-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  min-height: 13rem;
+  transition: background 0.4s var(--ease-out-quart);
+}
+
+.about__passion-item:hover { background: var(--paper-deep); }
+
+.about__passion-n {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  line-height: 1.3;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.about__passion-title {
+  margin: 0;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  line-height: 1.15;
   letter-spacing: -0.012em;
   color: var(--ink);
 }
 
-.about__boards {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
+.about__passion-body {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-top: auto;
 }
 
-.about__boards-label { color: var(--ink-muted); }
-
-.about__boards-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem 2rem;
-}
-
-.about__boards-item {
+/* Closing */
+.about__closing {
+  margin: 0;
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  padding-left: 1rem;
-  border-left: 2px solid var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  max-width: 80ch;
+  line-height: 1.7;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
-@media (max-width: 700px) {
-  .about__boards-list { grid-template-columns: 1fr; }
+.about__closing::before {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: var(--ink-muted);
+  margin-top: 0.55rem;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1100px) {
-  .about { grid-template-columns: 1fr; gap: 3rem; }
-  .about__left { position: relative; top: auto; }
+  .about__body { grid-template-columns: 1fr; gap: 1.25rem; }
+  .about__passion-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .about__passion-list { grid-template-columns: 1fr; }
+  .about__passion-item { min-height: auto; padding: 1.5rem 1.25rem; }
+  .about__motto-text { font-size: clamp(1.6rem, 7vw, 2.5rem); max-width: 100%; }
 }

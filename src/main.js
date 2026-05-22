@@ -9,6 +9,7 @@ import { mountNav } from './modules/nav.js';
 import { mountHero } from './modules/hero.js';
 import { mountNumbers } from './modules/numbers.js';
 import { mountCases } from './modules/cases.js';
+import { mountAbout } from './modules/about.js';
 import { mountManifesto } from './modules/manifesto.js';
 import { mountRecognition } from './modules/recognition.js';
 import { mountExperience } from './modules/experience.js';
@@ -26,6 +27,7 @@ function boot() {
   mountHero();
   mountNumbers();
   mountCases();
+  mountAbout();
   mountManifesto();
   mountRecognition();
   mountExperience();

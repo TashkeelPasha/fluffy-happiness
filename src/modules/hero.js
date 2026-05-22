@@ -33,8 +33,10 @@ export function mountHero() {
 
           <div class="hero__attribution">
             <h1 id="hero-name" class="hero__name">${hero.name}</h1>
-            <p class="hero__role-line">${hero.roleLine}</p>
-            <p class="hero__note">${hero.note}</p>
+            <span class="hero__bullets-label">${hero.bulletsLabel}</span>
+            <ul class="hero__bullets">
+              ${hero.bullets.map((b) => `<li>${b}</li>`).join('')}
+            </ul>
           </div>
         </div>
 

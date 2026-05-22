@@ -80,9 +80,10 @@
 
 .hero__stat {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(2rem, 5.6vw, 7rem);
-  line-height: 0.96;
-  letter-spacing: -0.034em;
+  font-size: clamp(1.75rem, 4.6vw, 5.5rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.028em;
   color: var(--ink);
 }
 
@@ -116,30 +117,60 @@
 
 .hero__name {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 1.9vw, 2rem);
   line-height: 1.1;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.012em;
   color: var(--ink);
   margin: 0;
 }
 
-.hero__role-line {
+.hero__bullets-label {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  line-height: 1.6;
-  margin: 0;
-  max-width: 60ch;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.hero__note {
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
-  color: var(--ink-soft);
+.hero__bullets-label::before {
+  content: '';
+  width: 1.4rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.hero__bullets {
+  list-style: none;
   margin: 0;
-  margin-top: 0.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 64ch;
+}
+
+.hero__bullets li {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: clamp(0.82rem, 0.95vw, 1rem);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.hero__bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--accent);
 }
 
 /* PORTRAIT — same as before */
