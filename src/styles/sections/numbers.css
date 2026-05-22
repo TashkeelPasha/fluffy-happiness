@@ -58,30 +58,25 @@
 
 .num__figure {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5.2vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
   color: var(--ink);
   font-feature-settings: 'tnum';
   margin-block: 0.4rem 0.2rem;
+  white-space: nowrap;
 }
 
 .num__caption {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-size: 0.7rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  line-height: 1.6;
+  line-height: 1.55;
   margin-top: auto;
-  max-width: 28ch;
-}
-
-/* The 1st (PKR 3B) gets the accent treatment — the single quietly loud moment */
-.num:first-child .num__figure {
-  background: linear-gradient(180deg, transparent 65%, rgba(200, 168, 118, 0.4) 65%, rgba(200, 168, 118, 0.4) 84%, transparent 84%);
-  display: inline;
-  padding-inline: 0.05em;
+  max-width: 32ch;
 }
 
 .numbers__foot {

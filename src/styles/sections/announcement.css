@@ -1,0 +1,89 @@
+.section--announcement {
+  padding-block: var(--space-7);
+  background: var(--paper);
+}
+
+.announcement__card {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--accent);
+  background: linear-gradient(90deg, rgba(200, 168, 118, 0.10) 0%, rgba(200, 168, 118, 0) 60%);
+  position: relative;
+}
+
+.announcement__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--accent);
+}
+
+.announcement__tag {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+}
+
+.announcement__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.announcement__headline {
+  margin: 0;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 1.6vw, 1.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+
+.announcement__text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.announcement__cta {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 0.85rem 1.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.35s var(--ease-out-quart), color 0.35s var(--ease-out-quart);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.announcement__cta::after { content: '↗'; }
+.announcement__cta:hover { background: var(--ink); color: var(--paper); }
+
+@media (max-width: 900px) {
+  .announcement__card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .announcement__tag { justify-self: start; }
+  .announcement__cta { justify-self: start; }
+}

@@ -37,6 +37,11 @@ export function mountHero() {
             <ul class="hero__bullets">
               ${hero.bullets.map((b) => `<li>${b}</li>`).join('')}
             </ul>
+            ${
+              hero.cta
+                ? `<a class="hero__cta btn btn--primary" href="${hero.cta.href}" data-magnetic="0.18">${hero.cta.label}</a>`
+                : ''
+            }
           </div>
         </div>
 

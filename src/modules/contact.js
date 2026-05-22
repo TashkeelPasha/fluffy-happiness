@@ -9,7 +9,7 @@ export function mountContact() {
     <div class="container--narrow contact">
       <header class="contact__head">
         <span class="eyebrow">${contact.eyebrow}</span>
-        <span class="contact__window mono">${contact.windowLine}</span>
+        ${contact.windowLine ? `<span class="contact__window mono">${contact.windowLine}</span>` : ''}
       </header>
 
       <h2 id="contact-title" class="contact__title">${contact.title}</h2>

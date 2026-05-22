@@ -30,6 +30,14 @@ export function mountServices() {
               <span class="mandate__meta-label">Ideal counterparty</span>
               <span class="mandate__meta-value">${m.counterparty}</span>
             </div>
+            ${
+              m.publication
+                ? `<a class="mandate__publication" href="${m.publication.href}" target="_blank" rel="noopener" data-cursor>
+                    <span class="mandate__publication-label">${m.publication.label}</span>
+                    <span class="mandate__publication-note">${m.publication.note}</span>
+                  </a>`
+                : ''
+            }
           </li>`
           )
           .join('')}

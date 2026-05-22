@@ -134,6 +134,49 @@
 
 .mandate:hover .mandate__meta-value { color: var(--ink); }
 
+.mandate__publication {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.85rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--accent);
+  background: rgba(200, 168, 118, 0.08);
+  transition: background 0.35s var(--ease-out-quart), color 0.35s var(--ease-out-quart);
+}
+
+.mandate__publication:hover {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.mandate__publication-label {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.35s var(--ease-out-quart);
+}
+
+.mandate__publication-label::after { content: '↗'; }
+
+.mandate__publication:hover .mandate__publication-label { color: var(--ink); }
+
+.mandate__publication-note {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(244, 241, 234, 0.74);
+  transition: color 0.35s var(--ease-out-quart);
+}
+
+.mandate__publication:hover .mandate__publication-note { color: var(--ink-soft); }
+
 .services__note {
   margin-top: 2.5rem;
   font-family: 'Oswald', 'Arial Narrow', sans-serif;

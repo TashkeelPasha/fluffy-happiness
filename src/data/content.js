@@ -14,10 +14,10 @@ export const nav = {
   links: [
     { label: 'Mission', href: '#manifesto' },
     { label: 'Cases', href: '#cases' },
+    { label: 'About', href: '#about' },
     { label: 'Mandates', href: '#services' },
     { label: 'Track Record', href: '#experience' },
     { label: 'Networks', href: '#networks' },
-    { label: 'Voice', href: '#voice' },
     { label: 'Introduction', href: '#contact' },
   ],
 };
@@ -26,24 +26,36 @@ export const hero = {
   topLeft: 'AAK Advisory',
   topRight: 'Mandates · Confidential',
   stats: [
-    'USD 1B+ in components negotiated.',
-    'USD 10M+ in DFI recoveries.',
+    '$1B+ in components negotiated.',
+    '$10M+ in DFI recoveries.',
     '40 years across nine sectors.',
   ],
   name: 'Aamir Ahsan Khan',
   bulletsLabel: 'Who I am',
   bullets: [
-    'UK 1st Class Marine Chief Engineer → board-grade advisor.',
+    'UK 1st Class Chartered Engineer → board-grade advisor.',
     'Forensic-audit principal — USD 10M+ recovered for HBL · NDFC · NBP · FIA · NAB.',
-    'Non-Executive Director, capital advisor & mentor across UK · PK · GCC · USA.',
+    'Non-Executive Director, capital advisor & mentor across UK · PK · GCC · USA · Africa.',
     'Ambassador for Pakistan — International Human Rights Commission (2011).',
     'Mandates accepted by referral, on a strictly confidential basis.',
   ],
+  cta: {
+    label: 'Open a confidential introduction',
+    href: '#contact',
+  },
   meta: [
     { k: 'Based', v: 'Karachi · London' },
-    { k: 'Jurisdictions', v: 'UK · PK · GCC · USA' },
+    { k: 'Jurisdictions', v: 'UK · PK · GCC · USA · Africa' },
     { k: 'Engagements', v: 'By referral · Selective' },
   ],
+};
+
+export const announcement = {
+  tag: 'New venture',
+  headline: 'Currently exploring Africa for new ventures.',
+  body:
+    'A new chapter from January 2026 — Director, Innovation at Beverage Industries Africa Ltd (BIA), Nairobi. R&D, digital transformation, and new business models across East African markets.',
+  cta: { label: 'See the appointment in Track Record', href: '#experience' },
 };
 
 export const numbers = {
@@ -51,21 +63,20 @@ export const numbers = {
   title: 'By the numbers.',
   items: [
     {
-      n: 'USD 1 B+',
-      caption: 'Wärtsilä major engine components & auxiliaries secured under the closing 22-year Gul Ahmed Energy O&M contract',
+      n: '$1B+',
+      caption: 'Wärtsilä engine components & auxiliaries secured under the closing 22-year Gul Ahmed Energy O&M contract.',
     },
     {
-      n: 'USD 10 M+',
-      caption: 'Defaulted-loan recoveries executed across HBL · NDFC · NBP · FIA · NAB · Ehtasab Cell',
+      n: '$10M+',
+      caption: 'DFI defaulted-loan recoveries across HBL · NDFC · NBP · FIA · NAB · Ehtasab Cell.',
     },
     {
       n: '525+',
-      caption: 'Cities reached via The Global Chamber Pakistan Advisory Board',
+      caption: 'Cities across 35+ countries reached via The Global Chamber Pakistan Advisory Board.',
     },
     {
       n: '40+',
-      caption:
-        'Years across Marine Engineering · Energy · Forensic Audit · Governance · Aviation Venture · Building Management Systems · Oil Trading · Real Estate Development · Mentorship',
+      caption: 'Years across nine sectors and four jurisdictions — UK · PK · GCC · USA.',
     },
   ],
   foot: 'Figures verified across public-record matters and consent-disclosed engagements. USD equivalents indicative at prevailing exchange.',
@@ -206,8 +217,21 @@ export const experience = {
   eyebrow: '— Track Record',
   title: 'A practice built across boardrooms, plants, and capitals.',
   intro:
-    'Forty years across Marine Engineering, Energy, Forensic Audit, and Corporate Governance — UK · Pakistan · GCC · USA. Below: every active mandate, every closed engagement, every quantified outcome on the record.',
+    'Forty years across Marine Engineering, Energy, Forensic Audit, and Corporate Governance — UK · Pakistan · GCC · USA · Africa. Below: every active mandate, every closed engagement, every quantified outcome on the record.',
   items: [
+    {
+      period: 'Jan 2026 — Present',
+      duration: 'New',
+      role: 'Director, Innovation',
+      company: 'Beverage Industries Africa Ltd (BIA)',
+      location: 'Nairobi, Kenya',
+      type: 'Board-appointed · Director-level',
+      blurb:
+        'Appointed by the Board of BIA to provide strategic leadership across innovation, research & development, digital transformation, and new business models for East African beverage operations. Working with senior management, partners, and stakeholders to design and implement innovative solutions aligned with the company vision and long-term growth objectives. Reports directly to the Managing Director and the Board.',
+      outcome: 'Innovation mandate across East Africa — R&D, digital transformation, and new business-model design.',
+      skills: ['Innovation Strategy', 'R&D'],
+      moreSkills: 8,
+    },
     {
       period: 'Nov 2025 — Present',
       duration: '7 mos',
@@ -373,6 +397,11 @@ export const services = {
       scope:
         'DFI, regulator, and litigation-support engagements. Technical-and-financial audit programmes designed for material recovery.',
       counterparty: 'DFIs, central banks, regulators, NAB / Ehtasab-grade mandates',
+      publication: {
+        label: 'See publication',
+        href: 'https://www.thenews.com.pk/tns/detail/957747-why-we-need-to-change-our-audit-environment',
+        note: 'Published in The News on Sunday — "Why we need to change our audit environment."',
+      },
     },
     {
       n: '03',
@@ -460,9 +489,11 @@ export const networks = {
       label: 'Jurisdictions',
       items: [
         'London · United Kingdom',
-        'Karachi · Pakistan',
         'Manchester · United Kingdom',
+        'Karachi · Pakistan',
         'Bahrain · GCC',
+        'Seoul · South Korea',
+        'Nairobi · Kenya · East Africa',
         'USA · advisory',
       ],
     },
@@ -472,9 +503,10 @@ export const networks = {
         'World Bank · IMF · Islamic Development Bank',
         'HBL · NDFC · NBP · First Leasing Pakistan',
         'FIA · NAB · Ehtasab Cell · Ehtasab Bureau',
-        'The Global Chamber — 525+ cities',
+        'The Global Chamber — 525+ cities · 35+ countries',
         'Wärtsilä · Shanghai Electric · Lurgi GmbH',
         'Meinhardt Group · Academic Window LLC',
+        'Beverage Industries Africa Ltd (BIA)',
       ],
     },
     {
@@ -516,7 +548,7 @@ export const education = {
 export const contact = {
   eyebrow: '— Introduction',
   pre: 'Confidential introduction',
-  windowLine: 'In London · 18 January – 30 March 2026',
+  windowLine: '',
   title: 'Mandate type. Jurisdiction. Timeline.',
   body:
     'Introductions are accepted by referral or qualified approach. Engagement details, fee structure, and counterparty disclosure are confidential to the mandate and discussed under mutual NDA.',
