@@ -50,12 +50,51 @@ export const hero = {
   ],
 };
 
-export const announcement = {
-  tag: 'New venture',
-  headline: 'Currently exploring Africa for new ventures.',
-  body:
-    'A new chapter from January 2026 — Director, Innovation at Beverage Industries Africa Ltd (BIA), Nairobi. R&D, digital transformation, and new business models across East African markets.',
-  cta: { label: 'See the appointment in Track Record', href: '#experience' },
+export const africa = {
+  // Top: scrolling marquee — repeats infinitely
+  marquee: [
+    'EXPLORING AFRICA',
+    'BIA · NAIROBI',
+    'DIRECTOR INNOVATION',
+    'EAST AFRICAN MARKETS',
+    'NEW VENTURES · 2026',
+    'R&D · DIGITAL TRANSFORMATION',
+    'CROSS-BORDER MANDATES',
+  ],
+  // Bottom: focus mini-section detail
+  eyebrow: '— What\'s next',
+  title: 'Africa focus.',
+  lead:
+    'A new chapter, January 2026 onward. Board-appointed Director of Innovation at Beverage Industries Africa Ltd (BIA), Nairobi — Kenya as the entry-point into East African markets.',
+  meta: [
+    { k: 'Country', v: 'Kenya · East Africa' },
+    { k: 'City', v: 'Nairobi' },
+    { k: 'Role', v: 'Director, Innovation' },
+    { k: 'Effective', v: '01 January 2026' },
+  ],
+  focus: [
+    {
+      n: '01',
+      title: 'Innovation strategy',
+      body: 'Designing and executing the company innovation roadmap — aligned with vision and long-term growth.',
+    },
+    {
+      n: '02',
+      title: 'R&D leadership',
+      body: 'Leading research and development initiatives, partnered with academia, industry, and technology.',
+    },
+    {
+      n: '03',
+      title: 'Digital transformation',
+      body: 'New business models for East African beverage operations — incubation, acceleration, commercialisation.',
+    },
+    {
+      n: '04',
+      title: 'Board advisory',
+      body: 'Advising the Board and management on emerging trends, technologies, and market opportunities across the continent.',
+    },
+  ],
+  cta: { label: 'View full appointment in Track Record', href: '#experience' },
 };
 
 export const numbers = {
@@ -76,7 +115,8 @@ export const numbers = {
     },
     {
       n: '40+',
-      caption: 'Years across nine sectors and four jurisdictions — UK · PK · GCC · USA.',
+      caption:
+        'Years across Marine Engineering · Energy · Forensic Audit · Governance · Aviation Venture · Building Management Systems · Oil Trading · Real Estate Development · Mentorship.',
     },
   ],
   foot: 'Figures verified across public-record matters and consent-disclosed engagements. USD equivalents indicative at prevailing exchange.',

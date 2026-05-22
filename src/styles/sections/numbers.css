@@ -37,11 +37,11 @@
 .num {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  padding: 2.25rem 1.75rem;
+  gap: 1.1rem;
+  padding: 2rem 1.65rem;
   border-right: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  min-height: 14rem;
+  min-height: 19rem;
   position: relative;
   transition: background 0.4s var(--ease-out-quart);
 }
@@ -70,13 +70,13 @@
 
 .num__caption {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-soft);
   line-height: 1.55;
   margin-top: auto;
-  max-width: 32ch;
+  max-width: 34ch;
 }
 
 .numbers__foot {
