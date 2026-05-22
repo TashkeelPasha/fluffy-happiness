@@ -26,11 +26,32 @@ function renderField(f) {
     </div>`;
 }
 
+// ── Cloudflare Turnstile loader ──
+// Loads challenges.cloudflare.com/turnstile/v0/api.js once.
+// Resolves when window.turnstile is available.
+let turnstilePromise = null;
+function loadTurnstile() {
+  if (turnstilePromise) return turnstilePromise;
+  turnstilePromise = new Promise((resolve, reject) => {
+    if (window.turnstile) return resolve(window.turnstile);
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    s.async = true;
+    s.defer = true;
+    s.onload = () => resolve(window.turnstile);
+    s.onerror = () => reject(new Error('Turnstile failed to load'));
+    document.head.appendChild(s);
+  });
+  return turnstilePromise;
+}
+
 export function mountContact() {
   const el = document.getElementById('contact');
   if (!el) return;
 
   const form = contact.form;
+  const turnstileEnabled =
+    form.turnstileSiteKey && form.turnstileSiteKey !== 'YOUR_TURNSTILE_SITE_KEY';
 
   el.innerHTML = `
     <div class="container--narrow contact">
@@ -56,6 +77,13 @@ export function mountContact() {
           ${form.fields.map(renderField).join('')}
         </div>
 
+        ${turnstileEnabled
+          ? `<div class="form__captcha">
+              <div class="form__captcha-widget" id="cf-turnstile-host"></div>
+              <p class="form__captcha-hint mono">Protected by Cloudflare</p>
+            </div>`
+          : ''}
+
         <div class="form__actions">
           <button type="submit" class="btn btn--primary form__submit" data-magnetic="0.18">
             <span class="form__submit-label">Send confidential introduction</span>
@@ -77,34 +105,43 @@ export function mountContact() {
       </div>
 
       <p class="contact__foot">${contact.foot}</p>
-
-      <!-- Thank-you modal — shown on successful submit, auto-dismisses -->
-      <div class="thanks-modal" role="dialog" aria-modal="true" aria-labelledby="thanks-title" aria-hidden="true">
-        <div class="thanks-modal__backdrop"></div>
-        <div class="thanks-modal__card" role="document">
-          <button type="button" class="thanks-modal__close" aria-label="Close">&times;</button>
-          <div class="thanks-modal__check" aria-hidden="true">
-            <svg viewBox="0 0 52 52" width="48" height="48">
-              <circle class="thanks-modal__check-ring" cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path class="thanks-modal__check-tick" d="M14 27 l8 8 l16 -18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 id="thanks-title" class="thanks-modal__title">Thank you.</h3>
-          <p class="thanks-modal__body">Your message has been received. Expect a confidential reply within 24 hours.</p>
-          <p class="thanks-modal__hint mono">This window closes automatically</p>
-        </div>
-      </div>
     </div>
   `;
 
-  // ---- Form submission via Web3Forms (works on any static host) ----
+  // ── Thank-you modal — appended to <body> so it escapes any
+  // transformed/overflow-hidden ancestor (GSAP transforms on the section
+  // would otherwise re-parent fixed positioning to that section). ──
+  const modal = document.createElement('div');
+  modal.className = 'thanks-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'thanks-title');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = `
+    <div class="thanks-modal__backdrop"></div>
+    <div class="thanks-modal__card" role="document">
+      <button type="button" class="thanks-modal__close" aria-label="Close">&times;</button>
+      <div class="thanks-modal__check" aria-hidden="true">
+        <svg viewBox="0 0 52 52" width="48" height="48">
+          <circle class="thanks-modal__check-ring" cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path class="thanks-modal__check-tick" d="M14 27 l8 8 l16 -18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 id="thanks-title" class="thanks-modal__title">Thank you.</h3>
+      <p class="thanks-modal__body">Your message has been received. Expect a confidential reply within 24 hours.</p>
+      <p class="thanks-modal__hint mono">This window closes automatically</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
   const formEl = el.querySelector('.contact__form');
   const feedback = el.querySelector('.form__feedback');
   const submit = el.querySelector('.form__submit');
-  const modal = el.querySelector('.thanks-modal');
-  const modalClose = el.querySelector('.thanks-modal__close');
-  const modalBackdrop = el.querySelector('.thanks-modal__backdrop');
+  const modalClose = modal.querySelector('.thanks-modal__close');
+  const modalBackdrop = modal.querySelector('.thanks-modal__backdrop');
   let modalTimer = null;
+  let turnstileWidgetId = null;
+  let turnstileToken = '';
 
   const closeModal = () => {
     if (modalTimer) { clearTimeout(modalTimer); modalTimer = null; }
@@ -117,7 +154,6 @@ export function mountContact() {
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    // Auto-dismiss after 5 seconds
     modalTimer = setTimeout(closeModal, 5000);
   };
 
@@ -126,6 +162,27 @@ export function mountContact() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
+
+  // ── Mount Turnstile widget ──
+  if (turnstileEnabled) {
+    loadTurnstile()
+      .then((turnstile) => {
+        const host = el.querySelector('#cf-turnstile-host');
+        if (!host) return;
+        turnstileWidgetId = turnstile.render(host, {
+          sitekey: form.turnstileSiteKey,
+          theme: 'light',
+          appearance: 'always',
+          callback: (token) => { turnstileToken = token; },
+          'expired-callback': () => { turnstileToken = ''; },
+          'error-callback': () => { turnstileToken = ''; },
+        });
+      })
+      .catch(() => {
+        feedback.className = 'form__feedback is-error';
+        feedback.textContent = 'Captcha failed to load. Please refresh the page.';
+      });
+  }
 
   formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -136,12 +193,23 @@ export function mountContact() {
       return;
     }
 
+    if (turnstileEnabled && !turnstileToken) {
+      feedback.className = 'form__feedback is-error';
+      feedback.textContent = 'Please complete the captcha before sending.';
+      return;
+    }
+
     submit.classList.add('is-loading');
     submit.disabled = true;
     feedback.className = 'form__feedback';
     feedback.textContent = '';
 
     const data = new FormData(formEl);
+    if (turnstileEnabled && turnstileToken) {
+      // Web3Forms accepts the Turnstile response under this field name.
+      data.set('cf-turnstile-response', turnstileToken);
+    }
+
     try {
       const res = await fetch(form.endpoint, {
         method: 'POST',
@@ -151,6 +219,11 @@ export function mountContact() {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.success !== false) {
         formEl.reset();
+        // Reset the captcha so a new token is required for the next submit.
+        if (turnstileEnabled && window.turnstile && turnstileWidgetId !== null) {
+          try { window.turnstile.reset(turnstileWidgetId); } catch (_) {}
+          turnstileToken = '';
+        }
         openModal();
       } else {
         throw new Error(json.message || 'Submission failed');
@@ -173,6 +246,7 @@ export function mountContact() {
     stagger: 0.08,
     ease: 'expo.out',
     scrollTrigger: { trigger: el, start: 'top 78%' },
+    clearProps: 'transform,will-change',
   });
 
   gsap.from(el.querySelectorAll('.form__row'), {
@@ -182,5 +256,6 @@ export function mountContact() {
     stagger: 0.06,
     ease: 'expo.out',
     scrollTrigger: { trigger: '.contact__form', start: 'top 85%' },
+    clearProps: 'transform,will-change',
   });
 }
