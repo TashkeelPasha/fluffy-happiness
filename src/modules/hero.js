@@ -38,8 +38,15 @@ export function mountHero() {
               ${hero.bullets.map((b) => `<li>${b}</li>`).join('')}
             </ul>
             ${
-              hero.cta
-                ? `<a class="hero__cta btn btn--primary" href="${hero.cta.href}" data-magnetic="0.18">${hero.cta.label}</a>`
+              hero.ctas?.length
+                ? `<div class="hero__ctas">
+                    ${hero.ctas
+                      .map(
+                        (c) => `
+                      <a class="btn btn--${c.kind}" href="${c.href}"${c.external ? ' target="_blank" rel="noopener"' : ''} data-magnetic="0.18">${c.label}</a>`
+                      )
+                      .join('')}
+                  </div>`
                 : ''
             }
           </div>

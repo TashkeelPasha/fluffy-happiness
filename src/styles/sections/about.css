@@ -180,6 +180,13 @@
   flex-shrink: 0;
 }
 
+.about__ctas {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
 @media (max-width: 1100px) {
   .about__body { grid-template-columns: 1fr; gap: 1.25rem; }
   .about__passion-list { grid-template-columns: repeat(2, 1fr); }

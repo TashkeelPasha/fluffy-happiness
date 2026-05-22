@@ -42,6 +42,19 @@ export function mountAbout() {
       </section>
 
       <p class="about__closing">${about.closing}</p>
+
+      ${
+        about.ctas?.length
+          ? `<div class="about__ctas">
+              ${about.ctas
+                .map(
+                  (c) => `
+                <a class="btn btn--${c.kind}" href="${c.href}"${c.external ? ' target="_blank" rel="noopener"' : ''} data-magnetic="0.18">${c.label}</a>`
+                )
+                .join('')}
+            </div>`
+          : ''
+      }
     </div>
   `;
 

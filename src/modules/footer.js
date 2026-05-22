@@ -22,6 +22,23 @@ export function mountFooter() {
         <span class="footer__copy">${footer.copy}</span>
         <span class="footer__mark serif-italic">${footer.mark}</span>
       </div>
+      ${
+        footer.maker
+          ? `<div class="footer__maker">
+              <span class="footer__maker-text">
+                ${footer.maker.intro}
+                <span class="footer__heart" aria-hidden="true">${footer.maker.heart}</span>
+                ${footer.maker.by}
+                <a class="footer__maker-link" href="${footer.maker.linkedin}" target="_blank" rel="noopener">${footer.maker.name}</a>
+              </span>
+              <span class="footer__maker-contact">
+                <a class="footer__maker-link" href="${footer.maker.linkedin}" target="_blank" rel="noopener">LinkedIn</a>
+                <span aria-hidden="true">·</span>
+                <a class="footer__maker-link" href="mailto:${footer.maker.email}">${footer.maker.email}</a>
+              </span>
+            </div>`
+          : ''
+      }
     </div>
   `;
 

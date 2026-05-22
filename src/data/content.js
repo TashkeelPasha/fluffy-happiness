@@ -7,6 +7,8 @@ export const meta = {
   ogImage: '/og-image.jpg',
   brand: 'AAK Advisory',
   principal: 'Aamir Ahsan Khan',
+  linkedin: 'https://www.linkedin.com/in/aamirahsankhan',
+  email: 'mandates@aamirahsankhan.me',
 };
 
 export const nav = {
@@ -39,10 +41,10 @@ export const hero = {
     'Ambassador for Pakistan — International Human Rights Commission (2011).',
     'Mandates accepted by referral, on a strictly confidential basis.',
   ],
-  cta: {
-    label: 'Open a confidential introduction',
-    href: '#contact',
-  },
+  ctas: [
+    { label: 'Contact me', href: '#contact', kind: 'primary' },
+    { label: 'View LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true },
+  ],
   meta: [
     { k: 'Based', v: 'Karachi · London' },
     { k: 'Jurisdictions', v: 'UK · PK · GCC · USA · Africa' },
@@ -120,6 +122,10 @@ export const numbers = {
     },
   ],
   foot: 'Figures verified across public-record matters and consent-disclosed engagements. USD equivalents indicative at prevailing exchange.',
+  ctas: [
+    { label: 'Contact me', href: '#contact', kind: 'primary' },
+    { label: 'View LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true },
+  ],
 };
 
 export const manifesto = {
@@ -192,6 +198,10 @@ export const about = {
   ],
   closing:
     'Selected engagements only. References on request. Engagement details, sizing, and counterparty disclosure are confidential to the mandate.',
+  ctas: [
+    { label: 'Contact me', href: '#contact', kind: 'primary' },
+    { label: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true },
+  ],
 };
 
 export const cases = {
@@ -589,24 +599,78 @@ export const contact = {
   eyebrow: '— Introduction',
   pre: 'Confidential introduction',
   windowLine: '',
-  title: 'Mandate type. Jurisdiction. Timeline.',
+  title: 'Open a confidential introduction.',
   body:
     'Introductions are accepted by referral or qualified approach. Engagement details, fee structure, and counterparty disclosure are confidential to the mandate and discussed under mutual NDA.',
-  prompts: [
-    { k: 'Mandate type', v: 'Capital · Forensic · NED · Restructuring · Infrastructure' },
-    { k: 'Jurisdiction', v: 'UK · Pakistan · GCC · USA · Other' },
-    { k: 'Timeline', v: 'Immediate · 2026 · 2026–27 · Open' },
-  ],
+  // Form posts via Web3Forms — a free static-form relay that works on GitHub Pages
+  // and any CDN-hosted static site. Replace ACCESS_KEY with the key from
+  // https://web3forms.com/ (free, just requires an email confirmation).
+  form: {
+    accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+    endpoint: 'https://api.web3forms.com/submit',
+    replyEmail: 'mandates@aamirahsankhan.me',
+    subject: 'Confidential introduction — AAK Advisory',
+    successMessage: 'Thank you. Your message has been received — expect a reply within 24 hours.',
+    errorMessage: 'Something went wrong. Please try again, or write to mandates@aamirahsankhan.me directly.',
+    fields: [
+      { name: 'name', label: 'Your name', type: 'text', required: true, placeholder: 'Full name' },
+      { name: 'email', label: 'Email', type: 'email', required: true, placeholder: 'name@organisation.com' },
+      { name: 'organisation', label: 'Organisation', type: 'text', required: false, placeholder: 'Board / family office / firm' },
+      {
+        name: 'mandate_type',
+        label: 'Mandate type',
+        type: 'select',
+        required: true,
+        options: [
+          'Select a mandate type',
+          'Capital advisory & raises',
+          'Forensic audit & financial recovery',
+          'Non-Executive Director / board placement',
+          'Strategic restructuring',
+          'Data centre & critical infrastructure',
+          'Marine engineering & energy advisory',
+          'Africa venture / BIA',
+          'Other',
+        ],
+      },
+      {
+        name: 'jurisdiction',
+        label: 'Jurisdiction',
+        type: 'select',
+        required: false,
+        options: ['Select jurisdiction', 'United Kingdom', 'Pakistan', 'GCC', 'United States', 'Africa', 'Other'],
+      },
+      {
+        name: 'timeline',
+        label: 'Timeline',
+        type: 'select',
+        required: false,
+        options: ['Select timeline', 'Immediate', '2026', '2026–27', 'Open'],
+      },
+      {
+        name: 'message',
+        label: 'Brief context',
+        type: 'textarea',
+        required: true,
+        placeholder: 'No confidential particulars at this stage. A referring relationship is welcome.',
+      },
+    ],
+  },
+  reply: {
+    label: 'Reply commitment',
+    text: 'I will personally reply within 24 hours to every qualified introduction.',
+  },
   cta: [
     {
-      label: 'Open a confidential introduction',
-      href: 'mailto:mandates@aamirahsankhan.me?subject=Confidential%20introduction%20%E2%80%93%20AAK%20Advisory&body=Mandate%20type%3A%20%0AJurisdiction%3A%20%0ATimeline%3A%20%0A%0ABrief%20context%20(no%20confidential%20particulars%20at%20this%20stage)%3A%20%0A%0AYour%20referrer%20(if%20any)%3A%20%0A',
-      kind: 'primary',
+      label: 'Email directly',
+      href: 'mailto:mandates@aamirahsankhan.me?subject=Confidential%20introduction%20%E2%80%93%20AAK%20Advisory',
+      kind: 'ghost',
     },
     {
-      label: 'Request a mutual NDA before disclosure',
-      href: 'mailto:mandates@aamirahsankhan.me?subject=NDA%20request%20%E2%80%93%20AAK%20Advisory&body=Requesting%20a%20mutual%20NDA%20before%20disclosing%20mandate%20particulars.%0A%0AOrganisation%3A%20%0AJurisdiction%3A%20%0ASignatory%20capacity%3A%20%0A',
+      label: 'Connect on LinkedIn',
+      href: 'https://www.linkedin.com/in/aamirahsankhan',
       kind: 'ghost',
+      external: true,
     },
   ],
   foot: 'By referral or qualified introduction. Mandates accepted selectively.',
@@ -618,4 +682,12 @@ export const footer = {
   jurisdiction: 'Standing across UK · Pakistani · GCC · US company-law jurisdictions.',
   copy: '© 2026 AAK Advisory — Aamir Ahsan Khan. All rights reserved.',
   mark: 'AAK',
+  maker: {
+    intro: 'Made with',
+    heart: '♥',
+    by: 'by',
+    name: 'M Tashkeel Pasha',
+    linkedin: 'https://www.linkedin.com/in/mtpasha/',
+    email: 'm.tashkeelpasha1@gmail.com',
+  },
 };

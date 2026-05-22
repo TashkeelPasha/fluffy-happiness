@@ -98,6 +98,13 @@
   background: var(--ink-muted);
 }
 
+.numbers__ctas {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
 @media (max-width: 1100px) {
   .numbers__grid { grid-template-columns: repeat(2, 1fr); }
 }

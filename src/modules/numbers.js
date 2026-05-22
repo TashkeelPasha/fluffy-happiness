@@ -26,6 +26,19 @@ export function mountNumbers() {
       </ul>
 
       <p class="numbers__foot">${numbers.foot}</p>
+
+      ${
+        numbers.ctas?.length
+          ? `<div class="numbers__ctas">
+              ${numbers.ctas
+                .map(
+                  (c) => `
+                <a class="btn btn--${c.kind}" href="${c.href}"${c.external ? ' target="_blank" rel="noopener"' : ''} data-magnetic="0.18">${c.label}</a>`
+                )
+                .join('')}
+            </div>`
+          : ''
+      }
     </div>
   `;
 
