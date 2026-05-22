@@ -20,7 +20,6 @@
 
 .cases__title {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: var(--fs-display-l);
   line-height: 0.95;
   letter-spacing: -0.025em;
@@ -88,7 +87,6 @@
 
 .case__n {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: 1.85rem;
   color: var(--ink-muted);
   letter-spacing: -0.015em;
@@ -105,7 +103,6 @@
 
 .case__title {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(1.6rem, 2.2vw, 2.25rem);
   line-height: 1.05;
   letter-spacing: -0.015em;
@@ -149,7 +146,6 @@
 
 .case__row--outcome .case__text {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   line-height: 1.35;
   color: var(--ink);

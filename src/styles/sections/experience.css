@@ -11,7 +11,6 @@
 
 .experience__title {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: var(--fs-display-l);
   line-height: 0.95;
   letter-spacing: -0.025em;
@@ -49,7 +48,6 @@
 
 .experience__counter {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(4rem, 8vw, 8rem);
   line-height: 0.9;
   letter-spacing: -0.04em;
@@ -93,7 +91,6 @@
 
 .exp__n {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: 1.85rem;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -127,7 +124,6 @@
 
 .exp__role {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(1.6rem, 2.6vw, 2.4rem);
   line-height: 1.05;
   letter-spacing: -0.015em;
@@ -176,7 +172,6 @@
 
 .exp__outcome {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   line-height: 1.35;
   color: var(--ink);

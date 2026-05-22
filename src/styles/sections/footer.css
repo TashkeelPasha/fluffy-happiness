@@ -24,7 +24,6 @@
 
 .footer__item {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(4rem, 14vw, 16rem);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -43,7 +42,6 @@
 
 .footer__discretion-line {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(1.05rem, 1.4vw, 1.35rem);
   line-height: 1.4;
   color: rgba(244, 241, 234, 0.92);
@@ -79,7 +77,6 @@
 
 .footer__mark {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: 1.25rem;
   letter-spacing: -0.01em;
 }

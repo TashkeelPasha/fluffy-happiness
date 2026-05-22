@@ -17,7 +17,6 @@
 
 .numbers__title {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: var(--fs-display-l);
   line-height: 0.95;
   letter-spacing: -0.025em;
@@ -59,7 +58,6 @@
 
 .num__figure {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-size: clamp(3.5rem, 7vw, 6.5rem);
   line-height: 0.9;
   letter-spacing: -0.04em;

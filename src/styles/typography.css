@@ -18,7 +18,7 @@ body {
   letter-spacing: 0.005em;
 }
 
-/* All utility classes now resolve to Oswald — italics are synthesised by the browser. */
+/* All utility classes resolve to Oswald, upright. Italic styling has been removed sitewide. */
 
 .serif {
   font-family: 'Oswald', 'Oswald Fallback', 'Arial Narrow', sans-serif;
@@ -29,7 +29,6 @@ body {
 
 .serif-italic {
   font-family: 'Oswald', 'Oswald Fallback', 'Arial Narrow', sans-serif;
-  font-style: italic;
   font-weight: 500;
   letter-spacing: -0.005em;
   line-height: 1;
@@ -96,7 +95,7 @@ body {
   font-weight: 500;
 }
 
-.italic { font-style: italic; }
+.italic { font-style: normal; }
 
 .body-l {
   font-size: var(--fs-body-l);
