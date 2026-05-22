@@ -45,3 +45,8 @@
   color: var(--ink-soft);
   max-width: 64ch;
 }
+
+@media (max-width: 600px) {
+  .section--independence { padding-block: var(--space-9); }
+  .independence__card { padding: 1.75rem 1.4rem; gap: 1.25rem; }
+}

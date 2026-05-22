@@ -187,6 +187,7 @@
 }
 
 .carousel__dot {
+  position: relative;
   width: 16px;
   height: 3px;
   border-radius: 2px;
@@ -198,6 +199,13 @@
 }
 .carousel__dot:hover { background: rgba(244, 241, 234, 0.5); }
 .carousel__dot.is-active { background: var(--accent); width: 28px; }
+
+/* Expand tap target without changing the visible dot — for fine + coarse pointers alike */
+.carousel__dot::before {
+  content: '';
+  position: absolute;
+  inset: -14px -4px;
+}
 
 .carousel__nav { display: flex; gap: 0.5rem; }
 
