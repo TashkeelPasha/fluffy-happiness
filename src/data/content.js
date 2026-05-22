@@ -8,7 +8,7 @@ export const meta = {
   brand: 'AAK Advisory',
   principal: 'Aamir Ahsan Khan',
   linkedin: 'https://www.linkedin.com/in/aamirahsankhan',
-  email: 'mandates@aamirahsankhan.me',
+  email: 'contact@aamirahsankhan.me',
 };
 
 export const nav = {
@@ -46,9 +46,9 @@ export const hero = {
     { label: 'View LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true },
   ],
   meta: [
-    { k: 'Based', v: 'Karachi · London' },
     { k: 'Jurisdictions', v: 'UK · PK · GCC · USA · Africa' },
     { k: 'Engagements', v: 'By referral · Selective' },
+    { k: 'Contact', v: 'contact@aamirahsankhan.me' },
   ],
 };
 
@@ -608,10 +608,10 @@ export const contact = {
   form: {
     accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
     endpoint: 'https://api.web3forms.com/submit',
-    replyEmail: 'mandates@aamirahsankhan.me',
+    replyEmail: 'contact@aamirahsankhan.me',
     subject: 'Confidential introduction — AAK Advisory',
     successMessage: 'Thank you. Your message has been received — expect a reply within 24 hours.',
-    errorMessage: 'Something went wrong. Please try again, or write to mandates@aamirahsankhan.me directly.',
+    errorMessage: 'Something went wrong. Please try again, or write to contact@aamirahsankhan.me directly.',
     fields: [
       { name: 'name', label: 'Your name', type: 'text', required: true, placeholder: 'Full name' },
       { name: 'email', label: 'Email', type: 'email', required: true, placeholder: 'name@organisation.com' },
@@ -663,7 +663,7 @@ export const contact = {
   cta: [
     {
       label: 'Email directly',
-      href: 'mailto:mandates@aamirahsankhan.me?subject=Confidential%20introduction%20%E2%80%93%20AAK%20Advisory',
+      href: 'mailto:contact@aamirahsankhan.me?subject=Confidential%20introduction%20%E2%80%93%20AAK%20Advisory',
       kind: 'ghost',
     },
     {

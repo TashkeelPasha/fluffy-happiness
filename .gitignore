@@ -8,3 +8,6 @@ dist
 
 # Marketing / social-share assets — local working folder, not part of the build
 posts/
+
+# Local working PDFs — not part of the build
+public/*.pdf
