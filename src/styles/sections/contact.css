@@ -160,23 +160,52 @@
   pointer-events: none;
 }
 
-/* Cloudflare Turnstile captcha block */
+/* Lightweight in-house captcha: simple arithmetic challenge */
 .form__captcha {
   display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.form__captcha-label {
+  display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 0.25rem;
+  gap: 0.35rem;
+  flex: 1 1 14rem;
+  min-width: 0;
 }
 
-.form__captcha-widget {
-  min-height: 65px;
-}
-
-.form__captcha-hint {
+.form__captcha-eyebrow {
   font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-muted);
+}
+
+.form__captcha-question {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.form__captcha-question strong {
+  font-weight: 500;
+}
+
+.form__captcha-input {
+  width: 7rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 520px) {
+  .form__captcha { flex-direction: column; align-items: stretch; }
+  .form__captcha-input { width: 100%; }
 }
 
 .form__actions {

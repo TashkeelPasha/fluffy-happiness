@@ -608,10 +608,6 @@ export const contact = {
   form: {
     accessKey: '107f1643-b71a-4c11-8084-e4bba9a95d69',
     endpoint: 'https://api.web3forms.com/submit',
-    // Cloudflare Turnstile — set this to your real site key from
-    // https://dash.cloudflare.com → Turnstile → Add site.
-    // Leave as 'YOUR_TURNSTILE_SITE_KEY' to disable the captcha entirely.
-    turnstileSiteKey: 'YOUR_TURNSTILE_SITE_KEY',
     replyEmail: 'contact@aamirahsankhan.me',
     subject: 'Confidential introduction — AAK Advisory',
     successMessage: 'Thank you. Your message has been received — expect a reply within 24 hours.',

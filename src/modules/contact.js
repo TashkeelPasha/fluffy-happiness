@@ -26,23 +26,13 @@ function renderField(f) {
     </div>`;
 }
 
-// ── Cloudflare Turnstile loader ──
-// Loads challenges.cloudflare.com/turnstile/v0/api.js once.
-// Resolves when window.turnstile is available.
-let turnstilePromise = null;
-function loadTurnstile() {
-  if (turnstilePromise) return turnstilePromise;
-  turnstilePromise = new Promise((resolve, reject) => {
-    if (window.turnstile) return resolve(window.turnstile);
-    const s = document.createElement('script');
-    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-    s.async = true;
-    s.defer = true;
-    s.onload = () => resolve(window.turnstile);
-    s.onerror = () => reject(new Error('Turnstile failed to load'));
-    document.head.appendChild(s);
-  });
-  return turnstilePromise;
+// ── Lightweight in-house captcha: simple arithmetic challenge ──
+// Pairs with the existing honeypot + a "submitted too fast" time-trap.
+// No third-party service, no Pro plan, no external network calls.
+function newChallenge() {
+  const a = Math.floor(Math.random() * 8) + 2; // 2..9
+  const b = Math.floor(Math.random() * 8) + 2; // 2..9
+  return { a, b, answer: a + b };
 }
 
 export function mountContact() {
@@ -50,8 +40,8 @@ export function mountContact() {
   if (!el) return;
 
   const form = contact.form;
-  const turnstileEnabled =
-    form.turnstileSiteKey && form.turnstileSiteKey !== 'YOUR_TURNSTILE_SITE_KEY';
+  let challenge = newChallenge();
+  const mountedAt = Date.now();
 
   el.innerHTML = `
     <div class="container--narrow contact">
@@ -77,12 +67,26 @@ export function mountContact() {
           ${form.fields.map(renderField).join('')}
         </div>
 
-        ${turnstileEnabled
-          ? `<div class="form__captcha">
-              <div class="form__captcha-widget" id="cf-turnstile-host"></div>
-              <p class="form__captcha-hint mono">Protected by Cloudflare</p>
-            </div>`
-          : ''}
+        <div class="form__captcha">
+          <label class="form__captcha-label" for="cf-captcha">
+            <span class="form__captcha-eyebrow mono">Verify you are human</span>
+            <span class="form__captcha-question">
+              What is <strong class="form__captcha-a">${challenge.a}</strong>
+              <span aria-hidden="true">+</span><span class="sr-only"> plus </span>
+              <strong class="form__captcha-b">${challenge.b}</strong>?
+            </span>
+          </label>
+          <input
+            id="cf-captcha"
+            class="form__captcha-input"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            autocomplete="off"
+            required
+            placeholder="Answer"
+          />
+        </div>
 
         <div class="form__actions">
           <button type="submit" class="btn btn--primary form__submit" data-magnetic="0.18">
@@ -109,8 +113,7 @@ export function mountContact() {
   `;
 
   // ── Thank-you modal — appended to <body> so it escapes any
-  // transformed/overflow-hidden ancestor (GSAP transforms on the section
-  // would otherwise re-parent fixed positioning to that section). ──
+  // transformed/overflow-hidden ancestor. ──
   const modal = document.createElement('div');
   modal.className = 'thanks-modal';
   modal.setAttribute('role', 'dialog');
@@ -137,11 +140,19 @@ export function mountContact() {
   const formEl = el.querySelector('.contact__form');
   const feedback = el.querySelector('.form__feedback');
   const submit = el.querySelector('.form__submit');
+  const captchaInput = el.querySelector('.form__captcha-input');
+  const captchaA = el.querySelector('.form__captcha-a');
+  const captchaB = el.querySelector('.form__captcha-b');
   const modalClose = modal.querySelector('.thanks-modal__close');
   const modalBackdrop = modal.querySelector('.thanks-modal__backdrop');
   let modalTimer = null;
-  let turnstileWidgetId = null;
-  let turnstileToken = '';
+
+  const rerollChallenge = () => {
+    challenge = newChallenge();
+    captchaA.textContent = challenge.a;
+    captchaB.textContent = challenge.b;
+    captchaInput.value = '';
+  };
 
   const closeModal = () => {
     if (modalTimer) { clearTimeout(modalTimer); modalTimer = null; }
@@ -163,29 +174,9 @@ export function mountContact() {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 
-  // ── Mount Turnstile widget ──
-  if (turnstileEnabled) {
-    loadTurnstile()
-      .then((turnstile) => {
-        const host = el.querySelector('#cf-turnstile-host');
-        if (!host) return;
-        turnstileWidgetId = turnstile.render(host, {
-          sitekey: form.turnstileSiteKey,
-          theme: 'light',
-          appearance: 'always',
-          callback: (token) => { turnstileToken = token; },
-          'expired-callback': () => { turnstileToken = ''; },
-          'error-callback': () => { turnstileToken = ''; },
-        });
-      })
-      .catch(() => {
-        feedback.className = 'form__feedback is-error';
-        feedback.textContent = 'Captcha failed to load. Please refresh the page.';
-      });
-  }
-
   formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     const accessKey = formEl.querySelector('input[name="access_key"]').value;
     if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
       feedback.className = 'form__feedback is-error';
@@ -193,9 +184,20 @@ export function mountContact() {
       return;
     }
 
-    if (turnstileEnabled && !turnstileToken) {
+    // Captcha check
+    const guess = parseInt(captchaInput.value, 10);
+    if (Number.isNaN(guess) || guess !== challenge.answer) {
       feedback.className = 'form__feedback is-error';
-      feedback.textContent = 'Please complete the captcha before sending.';
+      feedback.textContent = 'That sum is not right. Please try again.';
+      rerollChallenge();
+      captchaInput.focus();
+      return;
+    }
+
+    // Time-trap — humans don't fill and submit in under 2 seconds.
+    if (Date.now() - mountedAt < 2000) {
+      feedback.className = 'form__feedback is-error';
+      feedback.textContent = 'Please take a moment to review your message.';
       return;
     }
 
@@ -205,10 +207,8 @@ export function mountContact() {
     feedback.textContent = '';
 
     const data = new FormData(formEl);
-    if (turnstileEnabled && turnstileToken) {
-      // Web3Forms accepts the Turnstile response under this field name.
-      data.set('cf-turnstile-response', turnstileToken);
-    }
+    // Don't ship the captcha answer to Web3Forms — it's not useful in the email.
+    data.delete('captcha-answer');
 
     try {
       const res = await fetch(form.endpoint, {
@@ -219,11 +219,7 @@ export function mountContact() {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.success !== false) {
         formEl.reset();
-        // Reset the captcha so a new token is required for the next submit.
-        if (turnstileEnabled && window.turnstile && turnstileWidgetId !== null) {
-          try { window.turnstile.reset(turnstileWidgetId); } catch (_) {}
-          turnstileToken = '';
-        }
+        rerollChallenge();
         openModal();
       } else {
         throw new Error(json.message || 'Submission failed');
@@ -231,6 +227,7 @@ export function mountContact() {
     } catch (err) {
       feedback.className = 'form__feedback is-error';
       feedback.innerHTML = `${form.errorMessage}`;
+      rerollChallenge();
     } finally {
       submit.classList.remove('is-loading');
       submit.disabled = false;
