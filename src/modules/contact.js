@@ -56,7 +56,7 @@ export function mountContact() {
       <h2 id="contact-title" class="contact__title">${contact.title}</h2>
       <p class="contact__body">${contact.body}</p>
 
-      <form class="contact__form form" novalidate>
+      <form class="contact__form form">
         <input type="hidden" name="access_key" value="${form.accessKey}" />
         <input type="hidden" name="subject" value="${form.subject}" />
         <input type="hidden" name="from_name" value="AAK Advisory — Confidential Introduction" />
@@ -177,6 +177,24 @@ export function mountContact() {
   formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Mark the form as "submission-attempted" so :invalid styling can
+    // light up only after the user clicks submit — not on initial render.
+    formEl.classList.add('is-submitted');
+
+    // Belt-and-braces: enforce required fields in JS in case anything
+    // bypasses native HTML5 validation. Browsers will normally have
+    // surfaced their own tooltip before we even get here.
+    if (!formEl.checkValidity()) {
+      const firstInvalid = formEl.querySelector(':invalid');
+      if (firstInvalid) {
+        firstInvalid.focus({ preventScroll: false });
+        firstInvalid.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+      feedback.className = 'form__feedback is-error';
+      feedback.textContent = 'Please fill in all required fields before sending.';
+      return;
+    }
+
     const accessKey = formEl.querySelector('input[name="access_key"]').value;
     if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
       feedback.className = 'form__feedback is-error';
@@ -219,6 +237,7 @@ export function mountContact() {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.success !== false) {
         formEl.reset();
+        formEl.classList.remove('is-submitted');
         rerollChallenge();
         openModal();
       } else {
