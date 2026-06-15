@@ -8,6 +8,20 @@ function wrapWords(str) {
     .join(' ');
 }
 
+const ICONS = {
+  linkedin: `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M20.45 20.45h-3.55v-5.56c0-1.32-.03-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm-1.78 13.02h3.55V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/>
+  </svg>`,
+};
+
+function renderCta(c) {
+  const target = c.external ? ' target="_blank" rel="noopener"' : '';
+  if (c.icon && ICONS[c.icon]) {
+    return `<a class="btn btn--${c.kind} btn--icon" href="${c.href}"${target} aria-label="${c.label}" title="${c.label}">${ICONS[c.icon]}</a>`;
+  }
+  return `<a class="btn btn--${c.kind}" href="${c.href}"${target} data-magnetic="0.18">${c.label}</a>`;
+}
+
 export function mountHero() {
   const el = document.getElementById('hero');
   if (!el) return;
@@ -40,12 +54,7 @@ export function mountHero() {
             ${
               hero.ctas?.length
                 ? `<div class="hero__ctas">
-                    ${hero.ctas
-                      .map(
-                        (c) => `
-                      <a class="btn btn--${c.kind}" href="${c.href}"${c.external ? ' target="_blank" rel="noopener"' : ''} data-magnetic="0.18">${c.label}</a>`
-                      )
-                      .join('')}
+                    ${hero.ctas.map(renderCta).join('')}
                   </div>`
                 : ''
             }

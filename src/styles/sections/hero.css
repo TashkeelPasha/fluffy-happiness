@@ -177,12 +177,33 @@
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
+  align-items: stretch;
   margin-top: 0.5rem;
+}
+
+/* Icon-only CTA — square button sized to match the primary button's
+   rendered height (1.1rem×2 padding + ~0.7rem content + borders ≈ 3.875rem). */
+.hero__ctas .btn--icon {
+  padding: 0;
+  width: 3.875rem;
+  height: 3.875rem;
+  justify-content: center;
+  gap: 0;
+  flex: 0 0 auto;
+}
+
+.hero__ctas .btn--icon::after { content: none; }
+
+.hero__ctas .btn--icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
 }
 
 @media (max-width: 520px) {
   .hero__ctas { flex-direction: column; align-items: stretch; }
   .hero__ctas .btn { width: 100%; justify-content: center; }
+  .hero__ctas .btn--icon { width: 100%; height: 3.875rem; }
 }
 
 /* PORTRAIT — same as before */

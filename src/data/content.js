@@ -43,7 +43,7 @@ export const hero = {
   ],
   ctas: [
     { label: 'Contact me', href: '#contact', kind: 'primary' },
-    { label: 'View LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true, icon: 'linkedin' },
   ],
   meta: [
     { k: 'Jurisdictions', v: 'UK · PK · GCC · USA · Africa' },
@@ -137,6 +137,7 @@ export const manifesto = {
   // `src` is resolved relative to Vite's BASE_URL so it works locally and on GitHub Pages.
   carousel: [
     { src: 'images/1.jpeg', alt: 'Aamir Ahsan Khan' },
+    { src: 'images/2a.jpg', alt: 'Aamir Ahsan Khan' },
     { src: 'images/img1.jpeg', alt: 'Aamir Ahsan Khan' },
     { src: 'images/2.jpeg', alt: 'Aamir Ahsan Khan' },
     { src: 'images/3.jpeg', alt: 'Aamir Ahsan Khan' },
