@@ -43,7 +43,8 @@ export const hero = {
   ],
   ctas: [
     { label: 'Contact me', href: '#contact', kind: 'primary' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true, icon: 'linkedin' },
+    { label: 'Heroes of Pakistan', href: '#heroes', kind: 'ghost', icon: 'pk-flag' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/aamirahsankhan', kind: 'ghost', external: true, icon: 'linkedin', iconOnly: true },
   ],
   meta: [
     { k: 'Jurisdictions', v: 'UK · PK · GCC · USA · Africa' },
@@ -148,6 +149,48 @@ export const manifesto = {
     { src: 'images/8.jpeg', alt: 'Aamir Ahsan Khan' },
     { src: 'images/9.jpeg', alt: 'Aamir Ahsan Khan' },
     { src: 'images/10.jpeg', alt: 'Aamir Ahsan Khan' },
+  ],
+};
+
+export const heroes = {
+  eyebrow: '— Heroes of Pakistan',
+  title: 'Founders we champion.',
+  intro:
+    'A small cohort of Pakistani operators introduced through the network — building for Pakistan and the wider region, backed by the practice and mentored where we can help.',
+  // Photos: drop files into public/images/heroes/ and set the `photo` field.
+  // Leave `photo: null` to render the initials placeholder.
+  items: [
+    {
+      name: 'Sibtain Haider Gardezi',
+      initials: 'SG',
+      photo: null,
+      linkedin: '',
+      ventures: [
+        {
+          name: 'Khelkud',
+          description:
+            'A booking platform for sports grounds across Pakistan — turning fragmented rentals into a single searchable inventory.',
+        },
+      ],
+    },
+    {
+      name: 'M Saad Hashmi',
+      initials: 'SH',
+      photo: null,
+      linkedin: '',
+      ventures: [
+        {
+          name: 'Inspecto Shield',
+          description:
+            'A digital platform replacing manual, paper-based inspection workflows across heavy-industry sites.',
+        },
+        {
+          name: 'Hashtrack',
+          description:
+            'A workflow platform for medical representatives — visits, samples, and outcomes tracked end-to-end.',
+        },
+      ],
+    },
   ],
 };
 

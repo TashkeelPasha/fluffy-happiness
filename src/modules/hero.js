@@ -12,12 +12,23 @@ const ICONS = {
   linkedin: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
     <path fill="#0A66C2" d="M20.45 20.45h-3.55v-5.56c0-1.32-.03-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm-1.78 13.02h3.55V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/>
   </svg>`,
+  'pk-flag': `<svg viewBox="0 0 20 14" width="22" height="15" aria-hidden="true" focusable="false">
+    <rect width="20" height="14" fill="#01411C"/>
+    <rect width="5" height="14" fill="#fff"/>
+    <path d="M14.4 4a3 3 0 1 0 0 6 2.4 2.4 0 1 1 0-6z" fill="#fff"/>
+    <polygon points="16.7,5.4 17.1,6.45 18.2,6.55 17.4,7.3 17.65,8.35 16.7,7.8 15.75,8.35 16,7.3 15.2,6.55 16.3,6.45" fill="#fff"/>
+  </svg>`,
 };
 
 function renderCta(c) {
   const target = c.external ? ' target="_blank" rel="noopener"' : '';
-  if (c.icon && ICONS[c.icon]) {
-    return `<a class="btn btn--${c.kind} btn--icon" href="${c.href}"${target} aria-label="${c.label}" title="${c.label}">${ICONS[c.icon]}</a>`;
+  const iconSvg = c.icon && ICONS[c.icon] ? ICONS[c.icon] : '';
+
+  if (iconSvg && c.iconOnly) {
+    return `<a class="btn btn--${c.kind} btn--icon" href="${c.href}"${target} aria-label="${c.label}" title="${c.label}">${iconSvg}</a>`;
+  }
+  if (iconSvg) {
+    return `<a class="btn btn--${c.kind} btn--with-icon" href="${c.href}"${target} data-magnetic="0.18"><span class="btn__icon">${iconSvg}</span><span class="btn__text">${c.label}</span></a>`;
   }
   return `<a class="btn btn--${c.kind}" href="${c.href}"${target} data-magnetic="0.18">${c.label}</a>`;
 }

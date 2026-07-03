@@ -10,6 +10,7 @@ import { mountHero } from './modules/hero.js';
 import { mountNumbers } from './modules/numbers.js';
 import { mountAnnouncement } from './modules/announcement.js';
 import { mountCases } from './modules/cases.js';
+import { mountHeroes } from './modules/heroes.js';
 import { mountAbout } from './modules/about.js';
 import { mountManifesto } from './modules/manifesto.js';
 import { mountRecognition } from './modules/recognition.js';
@@ -29,6 +30,7 @@ function boot() {
   mountNumbers();
   mountAnnouncement();
   mountCases();
+  mountHeroes();
   mountAbout();
   mountManifesto();
   mountRecognition();
