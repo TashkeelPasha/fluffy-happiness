@@ -163,8 +163,9 @@ export const heroes = {
     {
       name: 'Sibtain Haider Gardezi',
       initials: 'SG',
-      photo: null,
-      linkedin: '',
+      photo: 'images/heroes/sibtain.jpg',
+      linkedin: 'https://www.linkedin.com/in/syed-sibtain-haider-ceo-khelkud/',
+      whatsapp: '+92 316 2423504',
       ventures: [
         {
           name: 'Khelkud',
@@ -176,8 +177,9 @@ export const heroes = {
     {
       name: 'M Saad Hashmi',
       initials: 'SH',
-      photo: null,
-      linkedin: '',
+      photo: 'images/heroes/saad.jpg',
+      linkedin: 'https://www.linkedin.com/in/saad-hashmi-10780/',
+      whatsapp: '+92 333 3304410',
       ventures: [
         {
           name: 'Inspecto Shield',

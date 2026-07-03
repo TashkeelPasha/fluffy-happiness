@@ -1,9 +1,15 @@
 import { gsap, ScrollTrigger, motionOK } from '../lib/gsap-setup.js';
 import { heroes } from '../data/content.js';
 
-const LINKEDIN_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-  <path fill="#0A66C2" d="M20.45 20.45h-3.55v-5.56c0-1.32-.03-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm-1.78 13.02h3.55V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/>
-</svg>`;
+// Static brand SVGs live under public/icons/ — sourced from Simple Icons (CC0).
+const BASE = import.meta.env.BASE_URL;
+const LINKEDIN_ICON = `<img src="${BASE}icons/linkedin.svg" width="16" height="16" alt="" aria-hidden="true" class="hero-card__link-icon hero-card__link-icon--linkedin" />`;
+const WHATSAPP_ICON = `<img src="${BASE}icons/whatsapp.svg" width="16" height="16" alt="" aria-hidden="true" class="hero-card__link-icon hero-card__link-icon--whatsapp" />`;
+
+// Turn "+92 316 2423504" into a wa.me deep link (only digits, no leading plus).
+function whatsappHref(number) {
+  return `https://wa.me/${number.replace(/[^0-9]/g, '')}`;
+}
 
 function renderPhoto(person) {
   if (person.photo) {
@@ -16,14 +22,23 @@ function renderPhoto(person) {
     </div>`;
 }
 
-function renderLinkedIn(person) {
+function renderContact(person) {
+  const parts = [];
   if (person.linkedin) {
-    return `<a class="hero-card__linkedin" href="${person.linkedin}" target="_blank" rel="noopener" aria-label="${person.name} on LinkedIn">
+    parts.push(`<a class="hero-card__link hero-card__link--linkedin" href="${person.linkedin}" target="_blank" rel="noopener" aria-label="${person.name} on LinkedIn">
         ${LINKEDIN_ICON}
-        <span>Connect on LinkedIn</span>
-      </a>`;
+        <span>LinkedIn</span>
+      </a>`);
+  } else {
+    parts.push(`<span class="hero-card__link hero-card__link--pending mono">LinkedIn — pending</span>`);
   }
-  return `<span class="hero-card__linkedin hero-card__linkedin--pending mono" aria-hidden="true">LinkedIn — pending</span>`;
+  if (person.whatsapp) {
+    parts.push(`<a class="hero-card__link hero-card__link--whatsapp" href="${whatsappHref(person.whatsapp)}" target="_blank" rel="noopener" aria-label="Message ${person.name} on WhatsApp">
+        ${WHATSAPP_ICON}
+        <span>WhatsApp</span>
+      </a>`);
+  }
+  return parts.join('');
 }
 
 export function mountHeroes() {
@@ -62,7 +77,7 @@ export function mountHeroes() {
                   .join('')}
               </ul>
               <footer class="hero-card__foot">
-                ${renderLinkedIn(p)}
+                ${renderContact(p)}
               </footer>
             </div>
           </li>`
@@ -88,11 +103,12 @@ export function mountHeroes() {
     onEnter: (batch) =>
       gsap.from(batch, {
         opacity: 0,
-        y: 60,
-        duration: 1.1,
-        stagger: 0.14,
+        y: 24,
+        duration: 0.7,
+        stagger: 0.05,
         ease: 'expo.out',
         overwrite: true,
+        clearProps: 'transform,will-change',
       }),
     once: true,
   });

@@ -212,10 +212,22 @@
   line-height: 0;
 }
 
-.hero__ctas .btn--with-icon .btn__icon svg {
+.hero__ctas .btn--with-icon .btn__icon svg,
+.hero__ctas .btn--with-icon .btn__icon .btn__icon-img {
   display: block;
   border-radius: 1px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.hero__ctas .btn__icon-img--flag {
+  width: 24px;
+  height: auto;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.hero__ctas .btn--icon .btn__icon-img {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
 }
 
 @media (max-width: 520px) {
