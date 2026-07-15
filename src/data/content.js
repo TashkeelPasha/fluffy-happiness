@@ -28,7 +28,7 @@ export const hero = {
   topLeft: 'AAK Advisory',
   topRight: 'Mandates · Confidential',
   stats: [
-    '$1B+ in components negotiated.',
+    'USD 450M+ in components negotiated.',
     '$10M+ in DFI recoveries.',
     '40 years across nine sectors.',
   ],
@@ -105,7 +105,7 @@ export const numbers = {
   title: 'By the numbers.',
   items: [
     {
-      n: '$1B+',
+      n: 'USD 450M+',
       caption: 'Wärtsilä engine components & auxiliaries secured under the closing 22-year Gul Ahmed Energy O&M contract.',
     },
     {
