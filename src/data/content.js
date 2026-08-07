@@ -163,9 +163,9 @@ export const heroes = {
     {
       name: 'Muhammad Tashkeel Pasha',
       initials: 'TP',
-      photo: null,
+      photo: 'images/heroes/tashkeel.jpg',
       linkedin: 'https://www.linkedin.com/in/mtpasha/',
-      whatsapp: '',
+      whatsapp: '+92 310 2221494',
       ventures: [
         {
           name: 'Voxif',
@@ -177,9 +177,9 @@ export const heroes = {
     {
       name: 'Muhammad Haris',
       initials: 'MH',
-      photo: null,
+      photo: 'images/heroes/haris.jpg',
       linkedin: 'https://www.linkedin.com/in/muhammad-haris-hassan-384672291/',
-      whatsapp: '',
+      whatsapp: '+92 348 3793134',
       ventures: [
         {
           name: 'MediScan',
