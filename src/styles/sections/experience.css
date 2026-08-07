@@ -162,6 +162,34 @@
   opacity: 0.55;
 }
 
+.exp__website {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.exp__website svg {
+  transition: color 0.3s ease;
+}
+
+.exp__website:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.exp__website:hover svg { color: var(--paper); }
+
 .exp__blurb {
   max-width: 68ch;
   color: var(--ink-soft);

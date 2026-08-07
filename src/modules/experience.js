@@ -1,6 +1,21 @@
 import { gsap, ScrollTrigger, motionOK } from '../lib/gsap-setup.js';
 import { experience } from '../data/content.js';
 
+const WEBSITE_ICON = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>`;
+
+// Strip protocol + trailing slash for a clean display label ("wrackler.com").
+function prettyDomain(url) {
+  return url.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
+}
+
+function renderWebsite(e) {
+  if (!e.website) return '';
+  return `<a class="exp__website" href="${e.website}" target="_blank" rel="noopener" aria-label="${e.company} website">
+      ${WEBSITE_ICON}
+      <span>${prettyDomain(e.website)}</span>
+    </a>`;
+}
+
 export function mountExperience() {
   const el = document.getElementById('experience');
   if (!el) return;
@@ -39,6 +54,7 @@ export function mountExperience() {
                   <strong>${e.company}</strong>
                   <span>${e.location}</span>
                   <span>${e.type}</span>
+                  ${renderWebsite(e)}
                 </div>
                 <p class="exp__blurb">${e.blurb}</p>
                 ${

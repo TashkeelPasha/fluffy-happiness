@@ -329,6 +329,7 @@ export const experience = {
       duration: '7 mos',
       role: 'Board Advisor',
       company: 'The Global Chamber',
+      website: 'https://www.globalchamber.org',
       location: 'International',
       type: 'Full-time',
       blurb:
@@ -342,6 +343,7 @@ export const experience = {
       duration: '1 yr',
       role: 'Director, Strategic Growth',
       company: 'Wrackler',
+      website: 'https://www.wrackler.com',
       location: 'Karachi, Pakistan',
       type: 'Contract · On-site',
       blurb:
@@ -355,6 +357,7 @@ export const experience = {
       duration: '3 yrs 3 mos',
       role: 'Managing Director',
       company: 'Indus Venture',
+      website: 'https://www.indusventure.com',
       location: 'London, United Kingdom',
       type: 'Full-time · Hybrid',
       blurb:
@@ -381,6 +384,7 @@ export const experience = {
       duration: '6 yrs 4 mos',
       role: 'Director, Projects',
       company: 'Innomeister',
+      website: 'https://innomei.com',
       location: 'Karachi Division, Pakistan',
       type: 'Full-time',
       blurb:
@@ -394,6 +398,7 @@ export const experience = {
       duration: '6 yrs 4 mos',
       role: 'Director, Projects',
       company: 'Redux Forensic Accountants',
+      website: 'https://reduxforensics.com',
       location: 'Manchester, United Kingdom',
       type: 'Contract · Remote',
       blurb:
@@ -420,6 +425,7 @@ export const experience = {
       duration: '2 mos',
       role: 'Internal Auditor',
       company: 'Meinhardt Group',
+      website: 'https://meinhardtgroup.com',
       location: 'Karachi, Pakistan',
       type: 'Contract · On-site',
       blurb:
@@ -433,6 +439,7 @@ export const experience = {
       duration: '22 yrs 6 mos',
       role: 'Manager Maintenance & Projects',
       company: 'Gul Ahmed Energy Group',
+      website: 'https://gaenergy.com',
       location: 'Karachi, Pakistan',
       type: 'Full-time',
       blurb:
@@ -459,6 +466,7 @@ export const experience = {
       duration: '10 yrs 1 mo',
       role: 'Marine Chief Engineer',
       company: 'Fred. Olsen',
+      website: 'https://www.fredolsen.no',
       location: 'International',
       type: 'Full-time',
       blurb:
