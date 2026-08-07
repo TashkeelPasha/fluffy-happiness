@@ -64,12 +64,15 @@
   transform: translateY(-2px);
 }
 
-/* Media block — photo or initials placeholder */
+/* Media block — portrait tile, contained so the photo never dominates
+   the card. Fixed 4/5 aspect gives natural framing for founder shots
+   whether the source is a square LinkedIn crop or a taller portrait. */
 .hero-card__media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  max-height: 22rem;
+  max-width: 20rem;
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
   overflow: hidden;
   background: var(--paper-deep);
   border: 1px solid var(--rule);
@@ -79,7 +82,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center 25%;
   display: block;
 }
 
@@ -223,5 +226,5 @@
 @media (max-width: 600px) {
   .section--heroes { padding-block: var(--space-9); }
   .hero-card { gap: 1.25rem; }
-  .hero-card__media { aspect-ratio: 1 / 1; }
+  .hero-card__media { max-width: 16rem; }
 }

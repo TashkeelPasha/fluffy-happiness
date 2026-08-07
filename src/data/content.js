@@ -163,7 +163,7 @@ export const heroes = {
     {
       name: 'Muhammad Tashkeel Pasha',
       initials: 'TP',
-      photo: 'images/heroes/tashkeel.jpg',
+      photo: 'images/heroes/tashkeel.png',
       linkedin: 'https://www.linkedin.com/in/mtpasha/',
       whatsapp: '+92 310 2221494',
       ventures: [
