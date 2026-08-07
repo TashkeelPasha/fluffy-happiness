@@ -162,6 +162,33 @@
   color: var(--ink);
 }
 
+.hero-card__venture-name--link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--ink);
+  align-self: flex-start;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-card__venture-name--link:hover {
+  border-bottom-color: var(--ink);
+}
+
+.hero-card__venture-ext {
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hero-card__venture-name--link:hover .hero-card__venture-ext {
+  transform: translate(2px, -2px);
+}
+
 .hero-card__venture-desc {
   margin: 0;
   font-family: 'Oswald', 'Arial Narrow', sans-serif;

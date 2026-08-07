@@ -70,7 +70,12 @@ export function mountHeroes() {
                   .map(
                     (v) => `
                   <li class="hero-card__venture">
-                    <span class="hero-card__venture-name">${v.name}</span>
+                    ${v.url
+                      ? `<a class="hero-card__venture-name hero-card__venture-name--link" href="${v.url}" target="_blank" rel="noopener" aria-label="${v.name} website">
+                          <span>${v.name}</span>
+                          <span class="hero-card__venture-ext" aria-hidden="true">↗</span>
+                        </a>`
+                      : `<span class="hero-card__venture-name">${v.name}</span>`}
                     <p class="hero-card__venture-desc">${v.description}</p>
                   </li>`
                   )

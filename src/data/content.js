@@ -169,6 +169,7 @@ export const heroes = {
       ventures: [
         {
           name: 'Voxif',
+          url: 'https://voxif.tech',
           description:
             'Building AI calling agents — realtime Urdu speech-to-speech for customer conversations at scale.',
         },
