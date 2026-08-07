@@ -5,6 +5,12 @@ import { heroes } from '../data/content.js';
 const BASE = import.meta.env.BASE_URL;
 const LINKEDIN_ICON = `<img src="${BASE}icons/linkedin.svg" width="16" height="16" alt="" aria-hidden="true" class="hero-card__link-icon hero-card__link-icon--linkedin" />`;
 const WHATSAPP_ICON = `<img src="${BASE}icons/whatsapp.svg" width="16" height="16" alt="" aria-hidden="true" class="hero-card__link-icon hero-card__link-icon--whatsapp" />`;
+const WEBSITE_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="hero-card__link-icon hero-card__link-icon--website"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>`;
+
+// Strip protocol/trailing-slash from a URL to show a clean display label like "voxif.tech".
+function prettyDomain(url) {
+  return url.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+}
 
 // Turn "+92 316 2423504" into a wa.me deep link (only digits, no leading plus).
 function whatsappHref(number) {
@@ -24,6 +30,12 @@ function renderPhoto(person) {
 
 function renderContact(person) {
   const parts = [];
+  if (person.website) {
+    parts.push(`<a class="hero-card__link hero-card__link--website" href="${person.website}" target="_blank" rel="noopener" aria-label="Visit ${prettyDomain(person.website)}">
+        ${WEBSITE_ICON}
+        <span>${prettyDomain(person.website)}</span>
+      </a>`);
+  }
   if (person.linkedin) {
     parts.push(`<a class="hero-card__link hero-card__link--linkedin" href="${person.linkedin}" target="_blank" rel="noopener" aria-label="${person.name} on LinkedIn">
         ${LINKEDIN_ICON}
@@ -70,12 +82,7 @@ export function mountHeroes() {
                   .map(
                     (v) => `
                   <li class="hero-card__venture">
-                    ${v.url
-                      ? `<a class="hero-card__venture-name hero-card__venture-name--link" href="${v.url}" target="_blank" rel="noopener" aria-label="${v.name} website">
-                          <span>${v.name}</span>
-                          <span class="hero-card__venture-ext" aria-hidden="true">↗</span>
-                        </a>`
-                      : `<span class="hero-card__venture-name">${v.name}</span>`}
+                    <span class="hero-card__venture-name">${v.name}</span>
                     <p class="hero-card__venture-desc">${v.description}</p>
                   </li>`
                   )

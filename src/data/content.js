@@ -166,10 +166,10 @@ export const heroes = {
       photo: 'images/heroes/tashkeel.png',
       linkedin: 'https://www.linkedin.com/in/mtpasha/',
       whatsapp: '+92 310 2221494',
+      website: 'https://voxif.tech',
       ventures: [
         {
           name: 'Voxif',
-          url: 'https://voxif.tech',
           description:
             'Building AI calling agents — realtime Urdu speech-to-speech for customer conversations at scale.',
         },
