@@ -161,35 +161,30 @@ export const heroes = {
   // Leave `photo: null` to render the initials placeholder.
   items: [
     {
-      name: 'Sibtain Haider Gardezi',
-      initials: 'SG',
-      photo: 'images/heroes/sibtain.jpg',
-      linkedin: 'https://www.linkedin.com/in/syed-sibtain-haider-ceo-khelkud/',
-      whatsapp: '+92 316 2423504',
+      name: 'Muhammad Tashkeel Pasha',
+      initials: 'TP',
+      photo: null,
+      linkedin: 'https://www.linkedin.com/in/mtpasha/',
+      whatsapp: '',
       ventures: [
         {
-          name: 'Khelkud',
+          name: 'Voxif',
           description:
-            'A booking platform for sports grounds across Pakistan — turning fragmented rentals into a single searchable inventory.',
+            'Building AI calling agents — realtime Urdu speech-to-speech for customer conversations at scale.',
         },
       ],
     },
     {
-      name: 'M Saad Hashmi',
-      initials: 'SH',
-      photo: 'images/heroes/saad.jpg',
-      linkedin: 'https://www.linkedin.com/in/saad-hashmi-10780/',
-      whatsapp: '+92 333 3304410',
+      name: 'Muhammad Haris',
+      initials: 'MH',
+      photo: null,
+      linkedin: 'https://www.linkedin.com/in/muhammad-haris-hassan-384672291/',
+      whatsapp: '',
       ventures: [
         {
-          name: 'Inspecto Shield',
+          name: 'MediScan',
           description:
-            'A digital platform replacing manual, paper-based inspection workflows across heavy-industry sites.',
-        },
-        {
-          name: 'Hashtrack',
-          description:
-            'A workflow platform for medical representatives — visits, samples, and outcomes tracked end-to-end.',
+            'An authentic-medicine verification app — scan pharma packaging to confirm authenticity and cut counterfeit medicines out of the supply chain.',
         },
       ],
     },
